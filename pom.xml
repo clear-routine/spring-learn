@@ -15,6 +15,7 @@
         <module>spring-annotation-bean-config</module>
         <module>spring-xml-web</module>
         <module>spring-annotation-web</module>
+        <module>spring-xml-web-multi-config</module>
     </modules>
 
     <properties>

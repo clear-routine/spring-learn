@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 产品模块配置 -->
+    
+    <!-- 产品数据访问层 -->
+    <bean id="productRepository" class="com.tt.repository.ProductRepository"/>
+
+    <!-- 产品服务层 -->
+    <bean id="productService" class="com.tt.service.ProductService">
+        <property name="productRepository" ref="productRepository"/>
+    </bean>
+
+    <!-- 产品控制器 -->
+    <bean id="productController" class="com.tt.controller.ProductController">
+        <property name="productService" ref="productService"/>
+    </bean>
+
+</beans>
