@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Spring Bean 工厂相关日志，Bean 覆盖日志在这里输出 -->
+    <!-- 注意：Spring 5.3.21 中，Bean 覆盖的日志可能在 DEBUG 级别 -->
+    <logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" level="DEBUG"/>
+    <logger name="org.springframework.beans.factory.support" level="DEBUG"/>
+    <logger name="org.springframework.beans.factory" level="INFO"/>
+    <logger name="org.springframework.context" level="INFO"/>
+    
+    <!-- 根日志级别设置为 INFO，但 Spring Bean 工厂使用 DEBUG -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

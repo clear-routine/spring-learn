@@ -19,6 +19,9 @@
         <module>spring-xml-web-import-config</module>
         <module>spring-bean-get-example</module>
         <module>spring-manual-bean-registration</module>
+        <module>spring-bean-override-default</module>
+        <module>spring-bean-override-disabled</module>
+        <module>spring-bean-override-explicit</module>
     </modules>
 
     <properties>
