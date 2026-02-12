@@ -22,6 +22,7 @@
         <module>spring-bean-override-default</module>
         <module>spring-bean-override-disabled</module>
         <module>spring-bean-override-explicit</module>
+        <module>spring-bean-override-bean-priority</module>
     </modules>
 
     <properties>

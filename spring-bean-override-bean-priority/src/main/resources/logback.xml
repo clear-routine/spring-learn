@@ -7,14 +7,17 @@
         </encoder>
     </appender>
 
-    <!-- Spring Bean 工厂相关日志，Bean 覆盖日志在这里输出 -->
-    <!-- 注意：Spring 5.3.21 中，Bean 覆盖的日志可能在 DEBUG 级别 -->
-    <logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" level="DEBUG"/>
-    <logger name="org.springframework.beans.factory.support" level="DEBUG"/>
+    <!-- Spring Bean 工厂相关日志 -->
+    <!-- 设置为 INFO 级别，Bean 覆盖的 DEBUG 日志将不会输出（静默覆盖） -->
+    <logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" level="INFO"/>
+    <logger name="org.springframework.beans.factory.support" level="INFO"/>
     <logger name="org.springframework.beans.factory" level="INFO"/>
     <logger name="org.springframework.context" level="INFO"/>
     
-    <!-- 根日志级别设置为 INFO，但 Spring Bean 工厂使用 DEBUG -->
+    <!-- 保留我们自定义的 AppConfig 日志 -->
+    <logger name="com.tt.config.AppConfig" level="INFO"/>
+    
+    <!-- 根日志级别设置为 INFO -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
     </root>
