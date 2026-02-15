@@ -28,6 +28,7 @@
         <module>spring-bean-static-factory</module>
         <module>spring-bean-instance-factory</module>
         <module>spring-bean-constructor-injection</module>
+        <module>spring-bean-constructor-arg-name</module>
     </modules>
 
     <properties>

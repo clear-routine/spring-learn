@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- name 参数名匹配：最可读，顺序无关，需编译时保留参数名 (-parameters) -->
+    <bean id="exampleBean" class="com.tt.ExampleBean">
+        <constructor-arg name="ultimateAnswer" value="42"/>
+        <constructor-arg name="years" value="7500000"/>
+    </bean>
+
+</beans>
