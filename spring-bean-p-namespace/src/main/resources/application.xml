@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 常规 property 写法 -->
+    <bean id="userByProperty" class="com.tt.User">
+        <property name="name" value="张三"/>
+        <property name="age" value="25"/>
+        <property name="email" value="zhangsan@example.com"/>
+    </bean>
+
+    <!-- p-namespace 简洁写法：p:属性名="值" 等价于 <property name="属性名" value="值"/> -->
+    <bean id="user" class="com.tt.User"
+          p:name="李四"
+          p:age="30"
+          p:email="lisi@example.com"/>
+
+</beans>

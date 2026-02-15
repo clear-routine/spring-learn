@@ -35,6 +35,8 @@
     <file url="file://$PROJECT_DIR$/spring-bean-override-example/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-override-explicit/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-override-explicit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-bean-p-namespace/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-bean-p-namespace/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-runtime-type/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-runtime-type/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-static-factory/src/main/java" charset="UTF-8" />

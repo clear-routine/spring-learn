@@ -29,6 +29,7 @@
         <module>spring-bean-instance-factory</module>
         <module>spring-bean-constructor-injection</module>
         <module>spring-bean-constructor-arg-name</module>
+        <module>spring-bean-p-namespace</module>
     </modules>
 
     <properties>
