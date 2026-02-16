@@ -30,6 +30,7 @@
         <module>spring-bean-constructor-injection</module>
         <module>spring-bean-constructor-arg-name</module>
         <module>spring-bean-p-namespace</module>
+        <module>spring-bean-c-namespace</module>
         <module>spring-bean-ref</module>
         <module>spring-bean-collections</module>
         <module>spring-bean-null-and-empty</module>

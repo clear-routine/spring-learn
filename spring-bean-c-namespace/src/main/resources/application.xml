@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="manager" class="com.tt.User">
+        <constructor-arg name="manager"><null/></constructor-arg>
+        <constructor-arg name="email" value="admin@example.com"/>
+    </bean>
+
+    <!-- 传统 constructor-arg 写法 -->
+    <bean id="userByConstructorArg" class="com.tt.User">
+        <constructor-arg name="manager" ref="manager"/>
+        <constructor-arg name="email" value="user@example.com"/>
+    </bean>
+
+    <!-- c-namespace：c:参数名-ref 用于引用，c:参数名 用于字面值 -->
+    <bean id="user" class="com.tt.User"
+          c:manager-ref="manager"
+          c:email="user@example.com"/>
+
+</beans>
