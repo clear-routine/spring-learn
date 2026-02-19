@@ -1,11 +1,12 @@
-[IDEA 如何创建多模块项目](../config/idea-multi-module-project.md)
+[IDEA 如何创建多模块项目。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/uoexu06gppoch3pc)
 
 # 使用 XML
+
 项目的具体细节可以直接参考代码仓库里的 **spring-xml** 模块。这个模块通过**最基础、最直观的示例**，一步一步带你完成整体搭建。在此基础上，下面还会对其中**一些必要的代码进行讲解**，帮助你更好地理解实现思路。
 
 ## Application.xml
 
-```xml
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -32,7 +33,7 @@
 + `<bean>`：用来声明一个由 `Spring` 管理的对象。
     - `id="userRepository"`：给这个 `bean` 取一个名字，后续可以通过 `ApplicationContext.getBean("userRepository")` 来获取它。
     - `class="com.example.UserRepository"`：表示这个 `bean` 要实例化的类，这里写的是**类的全限定类名**。
-+ `<property>`：用于给 `bean` 内部的属性赋值，实现依赖注入。`Spring` 在创建 `UserService` 时，会自动调用 `setUserRepository(UserRepository userRepository)` 方法，这就是典型的 **setter 注入**。
++ `<property>`：用于给 `bean` 内部的属性赋值，实现依赖注入。`Spring` 在创建 `UserService` 时，会自动调用 `setUserRepository(UserRepository userRepository)` 方法，这就是典型的 `**setter**`** 注入**。
     - `name="userRepository"`：对应的是 `UserService` 类中的属性名，通常是 `private UserRepository userRepository;`。
     - `ref="userRepository"`：用于引用另一个由 `Spring` 管理的 `Bean`，这里填写的就是前面定义的 `Bean ID`，比如 `userRepository`。
 
@@ -63,11 +64,14 @@ public class Main {
 通过 `new ClassPathXmlApplicationContext("Application.xml")` 把对应的配置文件加载进 `Spring` 容器中，然后再通过 `getBean` 方法获取需要的 `bean`，最后调用其中定义的方法即可完成业务逻辑的执行。
 
 # 带注解的组件类（不再用 XML）
+
 注解用起来非常方便，几乎不需要再手动写太多配置代码了。比如，使用 **@Repository** 修饰的类会被 `Spring` 纳入统一管理，一般用于数据库操作相关的代码，如数据的增删改查；**@Service** 修饰的类同样会交由 `Spring` 容器管理，通常用来表示应用中的业务逻辑层；**@Autowired** 用于将 `Spring` 容器中的 `bean` 自动注入到对应的属性中，减少手动创建和维护对象的麻烦；而 **@Controller** 则用于标识控制层的类，被它修饰的类会被 `Spring` 自动管理，主要负责处理 `Web` 请求。
 
 > 项目的具体细节可以直接参考代码仓库里的 **spring-annotation** 模块。
+>
 
 ## AppConfig
+
 ```java
 package com.tt.config;
 
@@ -128,11 +132,13 @@ public class Main {
 
 # Java Config
 
-在方式二中，可以将扫描改为**搭配 `@Bean` 注解的手动注册方式**。同时，`UserRepository`、`UserService`、`UserController` 类上的所有注解都可以取消，包括依赖注入相关的注解也无需保留。
+在方式二中，可以将扫描改为**搭配 **`**@Bean**`** 注解的手动注册方式**。同时，`UserRepository`、`UserService`、`UserController` 类上的所有注解都可以取消，包括依赖注入相关的注解也无需保留。
 
 > 具体的代码实现细节可以直接查看 **spring-annotation-bean-config** 模块。
+>
 
 ## AppConfig
+
 ```java
 package com.tt.config;
 
