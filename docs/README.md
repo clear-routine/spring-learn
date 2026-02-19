@@ -16,6 +16,7 @@
 - [XML 配置 + web.xml](example/xml-config-web-xml.md)
 - [注解配置 + web.xml](example/annotation-config-web-xml.md)
 - [多模块 XML 配置](example/multi-module-xml-config.md)
+- [多模块 XML 和主配置文件](example/multi-module-xml-and-main-config.md)
 
 ### 配置 (Config)
 

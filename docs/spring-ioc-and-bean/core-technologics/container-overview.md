@@ -77,11 +77,11 @@ application.xml (主配置)
 
 拆分以后，可以使用 `ClassPathXmlApplicationContext` 来加载对应的 `XML` 配置文件，这个类的构造方法支持同时传入多个 `XML` 文件路径，从而一次性加载多个配置文件。
 
-[多模块 XML 配置。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/vk6m9xfo4xu4ppu0)
+[多模块 XML 配置](../../example/multi-module-xml-config.md)
 
 除了直接加载多个 `XML` 配置文件之外，还可以使用 `<import />` 标签，在一个 `XML` 配置文件中引入其他 `XML` 配置文件，把多个配置合并在一起。这样一来，在 `web.xml` 中就不需要再逐个配置所有的 `XML` 文件了。
 
-[多模块 XML 和主配置文件。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/ybbetiuzw8hxm3fi)
+[多模块 XML 和主配置文件](../../example/multi-module-xml-and-main-config.md)
 
 # 使用容器
 
