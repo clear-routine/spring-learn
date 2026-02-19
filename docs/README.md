@@ -23,6 +23,7 @@
 - [禁止 Spring 的 Bean 覆盖行为](example/spring-bean-override-disabled.md)
 - [Spring 的默认 Bean 覆盖行为](example/spring-bean-override-default.md)
 - [@Bean 注解进行强行覆盖](example/bean-annotation-force-override.md)
+- [bean 别名](example/bean-alias.md)
 
 ### 配置 (Config)
 

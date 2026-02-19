@@ -63,7 +63,7 @@
 
 在 `XML` 配置中，可以通过 `id` 和 `name` 属性为当前 `Bean` 指定标识符。`id` 属性只能指定一个名字，它是这个 `Bean` 的主标识符。`name` 属性则可以指定多个名字，多个名称之间可以用逗号（`,`）、分号（`;`）或空格分隔。
 
-[bean 别名。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/yg6v230vkixwlzug)
+[bean 别名](../../example/bean-alias.md)
 
 `Bean` 并不一定非要写 `id` 或 `name`。只有在你需要通过名称获取某个 `Bean` 时，才必须为它指定名字。如果是内部 `Bean`，或者通过自动装配（`autowiring`）的方式进行依赖注入，通常就不需要显式地为 `Bean` 指定名称。
 
