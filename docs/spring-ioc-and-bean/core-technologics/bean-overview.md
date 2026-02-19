@@ -37,24 +37,25 @@
 
 [动态加载 bean](../../example/dynamic-load-bean.md)
 
-# <font style="color:rgb(20, 24, 24);">Overriding Beans。</font>
+## Overriding Beans
+
 **什么是 Bean 覆盖（Overriding Beans）？**简单说，就是**同一个 Bean 名字被定义了两次，后定义的会把前面的顶掉**。`Spring` 默认是允许这种行为的，但问题也很明显，**看配置的人很容易懵**，根本分不清运行时到底用的是哪个 `Bean`，一不小心就给自己埋坑了。官方也意识到这个问题，所以在**未来的 Spring 版本中，这种行为会被逐步“弃用”**。
 
-**如果你不希望项目里出现 Bean 覆盖，可以在 **`<font style="color:rgb(25, 30, 30);">ApplicationContext</font>`<font style="color:rgb(25, 30, 30);"> </font>**<font style="color:rgb(25, 30, 30);">刷新</font>****直接“硬性禁止”**<font style="color:rgb(25, 30, 30);">你可以明确告诉 </font>`<font style="color:rgb(25, 30, 30);">Spring</font>`<font style="color:rgb(25, 30, 30);">，</font>**不允许 Bean 重名，谁敢重名就直接报错！**
+如果你不希望项目里出现 Bean 覆盖，可以在 `ApplicationContext` 刷新时直接「硬性禁止」。你可以明确告诉 Spring，不允许 Bean 重名，谁敢重名就直接报错！
 
-<font style="color:rgb(25, 30, 30);">做法是通过 </font>`<font style="color:rgb(25, 30, 30);">ApplicationContext</font>`<font style="color:rgb(25, 30, 30);"> 调用 </font>`<font style="color:rgb(25, 30, 30);">setAllowBeanDefinitionOverriding(false);</font>`<font style="color:rgb(25, 30, 30);">，这样一来，只要出现</font>**重名 Bean**<font style="color:rgb(25, 30, 30);">，容器</font>**启动直接失败并抛异常**<font style="color:rgb(25, 30, 30);">，强制你去改配置，问题不会被悄悄吞掉。</font>
+做法是通过 `ApplicationContext` 调用 `setAllowBeanDefinitionOverriding(false)`，这样一来，只要出现重名 Bean，容器启动直接失败并抛异常，强制你去改配置，问题不会被悄悄吞掉。
 
 [禁止 Spring 的 Bean 覆盖行为。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/vybayengg4wul3gi)
 
-**如果你没有显式禁止 Bean 覆盖，**<font style="color:rgb(25, 30, 30);">那 </font>`<font style="color:rgb(25, 30, 30);">Spring</font>`<font style="color:rgb(25, 30, 30);"> 在每次发生隐式的 </font>`<font style="color:rgb(25, 30, 30);">Bean</font>`<font style="color:rgb(25, 30, 30);"> 覆盖时，都会在 </font>**Debug 级别**<font style="color:rgb(25, 30, 30);">打日志，提醒你“这里发生过覆盖”。虽然这样你</font>**有机会察觉到问题**<font style="color:rgb(25, 30, 30);">，但说实话，</font>**仍然不太安全**<font style="color:rgb(25, 30, 30);">，官方也更建议直接禁止。</font>
+如果你没有显式禁止 Bean 覆盖，那 Spring 在每次发生隐式的 Bean 覆盖时，都会在 Debug 级别打日志，提醒你「这里发生过覆盖」。虽然这样你有机会察觉到问题，但说实话，仍然不太安全，官方也更建议直接禁止。
 
 [Spring 的默认 Bean 覆盖行为。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/vgwkv9ozgmutrb9b)
 
-如果你是通过 `**@Configuration + @Bean**` 的方式来注入对象**，@Bean 修饰的对象都会生效并覆盖同名对象**。这是 `Spring` 官方刻意的设计，并不被认为是“非法覆盖”。原因在于 `Spring` 的设计取向，`@Bean` 属于**显式配置**，而组件扫描（`@Component` / `@Service` 等）只是一种**隐式的默认行为**，遵循的是“**显式 > 隐式**”的原则。
+如果你是通过 `@Configuration + @Bean` 的方式来注入对象，@Bean 修饰的对象都会生效并覆盖同名对象。这是 `Spring` 官方刻意的设计，并不被认为是“非法覆盖”。原因在于 `Spring` 的设计取向，`@Bean` 属于**显式配置**，而组件扫描（`@Component` / `@Service` 等）只是一种**隐式的默认行为**，遵循的是“**显式 > 隐式**”的原则。
 
 [@Bean 注解进行强行覆盖。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/pdb89a03gyr1gr6o)
 
-# <font style="color:rgb(20, 24, 24);">Naming Beans。</font>
+## Naming Beans
 每个 `Bean` 都必须有一个“名字”。`Bean` 本质上是 `Spring` 容器中的一个对象实例。可以把 `Spring` 容器理解成一个大仓库，里面存放着很多对象（也就是各种 `Bean`）。如果没有名字，就没办法区分这些不同的 `Bean`。
 
 每个 `Bean` 至少有一个标识符，并且这个标识符在容器中必须是唯一的。通常情况下，一个 `Bean` 只有一个名字；如果存在多个名字，那么其他的名字就是这个 `Bean` 的“别名（`alias`）”。
@@ -69,7 +70,7 @@
 
 当你使用注解对 `Bean` 进行标注时，`Spring` 会在扫描到对应类时，自动将其实例化并注入到容器中管理。此时，`Spring` 给 `Bean` 命名的规则也是默认取类名的首字母小写。但也有特殊情况，如果类名前两个字母都是大写，则保持原样，不做首字母小写，例如 `URLService` 的 `Bean` 名称仍然是 `URLService`。`Spring` 的自动 `Bean` 命名始终遵循 `java.beans.Introspector.decapitalize()` 的规则。
 
-# Instantiating Beans。
+## Instantiating Beans
 前面提到过，`Spring` 实例化 `Bean` 是通过 `BeanDefinition` 完成的，`BeanDefinition` 本质上可以理解为一份“配方”或“说明书”。
 
 其中会描述：
@@ -87,7 +88,7 @@
 
 其实，这个属性会在实例化 `Bean` 的时候发挥关键作用。它相当于告诉 `Spring`：“等会儿创建对象时，需要用到的类就在这里。” 也就是说，`class` 属性指定了要实例化的具体类，`Spring` 会根据这里提供的类信息创建对应的对象。
 
-## <font style="color:rgb(20, 24, 24);">使用构造函数进行实例化。</font>
+### 使用构造函数进行实例化
 那什么叫“构造函数方式实例化”呢？其实就是最常见、最普通的情况，在 `class` 属性中直接写入目标类的全限定类名，`Spring` 会根据这个类名完成依赖注入。
 
 这种方式占绝大多数使用场景。本质上可以理解为等价于我们在代码中使用 `new` 创建对象，只不过这个创建过程由 `Spring` 在容器内部帮我们完成了。
@@ -101,7 +102,7 @@
 
 [使用构造函数创建 Bean。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/gpbbgkqrg5z1xxsn)
 
-## <font style="color:rgb(20, 24, 24);">通过静态工厂方法实例化。</font>
+### 通过静态工厂方法实例化
 **用静态工厂方法（static factory method）创建 Bean**，也是 `Spring` 提供的另一种实例化方式，比直接构造器更灵活。
 
 如果想使用这种方式创建 `Bean` 对象，需要在 `class` 属性指定的全限定类中，编写一个静态方法，例如 `createInstance()`，该方法返回一个对象实例（可以是同类，也可以是其他类的实例）。
@@ -112,7 +113,7 @@
 
 [使用静态工厂方法创建 Bean。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/smpwc1y2kt28wgq5)
 
-## <font style="color:rgb(20, 24, 24);">通过实例工厂方法进行实例化。</font>
+### 通过实例工厂方法进行实例化
 与静态工厂方法类似，**实例工厂方法**是通过已有的 `Bean` 中定义的方法来创建新的 `Bean`，而不是通过尚未创建的 `Bean` 的静态方法进行创建。
 
 由于是调用已有 `Bean` 的实例方法来创建 `Bean`，因此在 `XML` 配置中可以将 `class` 属性留空。在 `factory-bean` 属性中指定要使用的已有 `Bean`，再通过 `factory-method` 属性设置工厂方法的名称即可。其他配置方式与静态工厂方法基本一致。

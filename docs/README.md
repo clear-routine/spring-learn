@@ -20,6 +20,7 @@
 - [多模块 XML 和主配置文件](example/multi-module-xml-and-main-config.md)
 - [使用容器](example/using-container.md)
 - [动态加载 bean](example/dynamic-load-bean.md)
+- [禁止 Spring 的 Bean 覆盖行为](example/spring-bean-override-disabled.md)
 
 ### 配置 (Config)
 
