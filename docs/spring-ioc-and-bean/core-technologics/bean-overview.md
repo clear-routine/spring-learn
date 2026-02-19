@@ -49,7 +49,7 @@
 
 如果你没有显式禁止 Bean 覆盖，那 Spring 在每次发生隐式的 Bean 覆盖时，都会在 Debug 级别打日志，提醒你「这里发生过覆盖」。虽然这样你有机会察觉到问题，但说实话，仍然不太安全，官方也更建议直接禁止。
 
-[Spring 的默认 Bean 覆盖行为。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/vgwkv9ozgmutrb9b)
+[Spring 的默认 Bean 覆盖行为](../../example/spring-bean-override-default.md)
 
 如果你是通过 `@Configuration + @Bean` 的方式来注入对象，@Bean 修饰的对象都会生效并覆盖同名对象。这是 `Spring` 官方刻意的设计，并不被认为是“非法覆盖”。原因在于 `Spring` 的设计取向，`@Bean` 属于**显式配置**，而组件扫描（`@Component` / `@Service` 等）只是一种**隐式的默认行为**，遵循的是“**显式 > 隐式**”的原则。
 
