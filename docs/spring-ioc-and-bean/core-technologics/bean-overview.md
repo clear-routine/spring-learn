@@ -45,7 +45,7 @@
 
 做法是通过 `ApplicationContext` 调用 `setAllowBeanDefinitionOverriding(false)`，这样一来，只要出现重名 Bean，容器启动直接失败并抛异常，强制你去改配置，问题不会被悄悄吞掉。
 
-[禁止 Spring 的 Bean 覆盖行为。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/vybayengg4wul3gi)
+[禁止 Spring 的 Bean 覆盖行为](../../example/spring-bean-override-disabled.md)
 
 如果你没有显式禁止 Bean 覆盖，那 Spring 在每次发生隐式的 Bean 覆盖时，都会在 Debug 级别打日志，提醒你「这里发生过覆盖」。虽然这样你有机会察觉到问题，但说实话，仍然不太安全，官方也更建议直接禁止。
 
