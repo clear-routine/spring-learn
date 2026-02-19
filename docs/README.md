@@ -14,6 +14,7 @@
 ##### 依赖注入 (Dependencies)
 
 - [依赖注入](core-technologics/spring-ioc-and-bean/dependencies/dependency-injection.md)
+- [依赖与配置](core-technologics/spring-ioc-and-bean/dependencies/dependencies-and-configuration.md)
 
 ### 示例 (Example)
 
