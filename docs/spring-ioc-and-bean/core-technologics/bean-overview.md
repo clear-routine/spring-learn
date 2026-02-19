@@ -35,7 +35,7 @@
 > 在正常的业务代码里千万别这么玩，这种能力主要是留给框架、中间件、容器扩展点以及 `Spring` 自己内部使用的，并不是给日常 `CRUD` 场景准备的，如果在业务代码中随意滥用，很容易让系统结构变得混乱，增加理解和维护成本，甚至埋下非常隐蔽的风险。
 >
 
-[动态加载 bean。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/mpsb868351rmbnku)
+[动态加载 bean](../../example/dynamic-load-bean.md)
 
 # <font style="color:rgb(20, 24, 24);">Overriding Beans。</font>
 **什么是 Bean 覆盖（Overriding Beans）？**简单说，就是**同一个 Bean 名字被定义了两次，后定义的会把前面的顶掉**。`Spring` 默认是允许这种行为的，但问题也很明显，**看配置的人很容易懵**，根本分不清运行时到底用的是哪个 `Bean`，一不小心就给自己埋坑了。官方也意识到这个问题，所以在**未来的 Spring 版本中，这种行为会被逐步“弃用”**。
