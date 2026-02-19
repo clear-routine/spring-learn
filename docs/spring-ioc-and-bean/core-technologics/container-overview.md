@@ -83,7 +83,7 @@ application.xml (主配置)
 
 [多模块 XML 和主配置文件。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/ybbetiuzw8hxm3fi)
 
-## 使用容器
+# 使用容器
 
 `ApplicationContext` 中可以存放各种各样的对象，通过调用 `getBean` 方法即可获取对应的 `Bean` 实例。获取 `Bean` 的方式有多种，具体可以参考下面的代码示例。
 
