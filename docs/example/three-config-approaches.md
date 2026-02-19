@@ -1,4 +1,4 @@
-[IDEA 如何创建多模块项目。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/uoexu06gppoch3pc)
+[IDEA 如何创建多模块项目](../config/idea-multi-module-project.md)
 
 # 使用 XML
 项目的具体细节可以直接参考代码仓库里的 **spring-xml** 模块。这个模块通过**最基础、最直观的示例**，一步一步带你完成整体搭建。在此基础上，下面还会对其中**一些必要的代码进行讲解**，帮助你更好地理解实现思路。
