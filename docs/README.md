@@ -4,12 +4,12 @@
 
 ## 目录
 
-### Spring IOC And Bean
+### 核心技术 (Core Technologies)
 
-#### 核心技术 (Core Technologies)
+#### Spring IOC And Bean
 
-- [容器概述](spring-ioc-and-bean/core-technologics/container-overview.md)
-- [Bean 概述](spring-ioc-and-bean/core-technologics/bean-overview.md)
+- [容器概述](core-technologics/spring-ioc-and-bean/container-overview.md)
+- [Bean 概述](core-technologics/spring-ioc-and-bean/bean-overview.md)
 
 ### 示例 (Example)
 
