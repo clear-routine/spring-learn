@@ -232,7 +232,7 @@ public class SomeClass {
 
 `Spring` 在注入时会通过反射获取 `accounts` 属性的类型信息，然后自动进行类型转换，把 `<map>` 里的字符串值转换成对应的 `Float` 对象，再注入到 `Bean` 中。
 
-[集合注入。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/diwyvzo32fit4d2a)
+[集合注入](../../../example/collections-injection.md)
 
 # 空值与空字符串值
 

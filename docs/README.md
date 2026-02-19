@@ -36,6 +36,7 @@
 - [p-namespace](example/p-namespace.md)
 - [ref](example/ref.md)
 - [内部 Bean](example/inner-bean.md)
+- [集合注入](example/collections-injection.md)
 
 ### 配置 (Config)
 
