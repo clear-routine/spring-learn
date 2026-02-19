@@ -307,7 +307,7 @@ public class ThingOne {
 
 因此，`c-namespace` 同时支持注入基本数据类型和引用类型，只是写法更简洁而已。
 
-[spring-bean-c-namespace](../../../example/c-namespace.md)
+更详细的代码示例可以参考 [c-namespace 示例](../../../example/c-namespace.md) 模块。
 
 # 复合属性名
 
@@ -360,4 +360,4 @@ class Bob {
 > 需要特别注意的是，在这种链式属性注入中，除了最后一个属性以外，前面的对象都不能是 `null`。也就是说，`fred` 不能为 `null`，`bob` 也不能为 `null`，因为 `Spring` 在处理 `fred.bob.sammy` 时，本质上是在依次调用 `something.getFred().getBob().setSammy("123")`。它不会帮你自动创建中间对象，如果某一层返回的是 `null`，继续调用下去就会直接抛出 `NullPointerException`。
 >
 
-[spring-bean-property-path](../../../example/property-path.md)
+更完整的示例代码可以参考 [复合属性名示例](../../../example/property-path.md) 模块。
