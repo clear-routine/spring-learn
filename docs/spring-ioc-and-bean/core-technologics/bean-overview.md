@@ -106,6 +106,7 @@
 [使用构造函数创建 Bean](../../example/bean-constructor-create.md)
 
 ### 通过静态工厂方法实例化
+
 **用静态工厂方法（static factory method）创建 Bean**，也是 `Spring` 提供的另一种实例化方式，比直接构造器更灵活。
 
 如果想使用这种方式创建 `Bean` 对象，需要在 `class` 属性指定的全限定类中，编写一个静态方法，例如 `createInstance()`，该方法返回一个对象实例（可以是同类，也可以是其他类的实例）。
@@ -114,9 +115,10 @@
 
 如果你希望在创建 `Bean` 时给工厂方法传递参数，`Spring` 也是支持的。只需要在 `XML` 配置文件中使用 `<constructor-arg value="xxx"/>` 指明要传递的参数，`Spring` 会自动匹配工厂方法的参数并将其传入。
 
-[使用静态工厂方法创建 Bean。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/smpwc1y2kt28wgq5)
+[使用静态工厂方法创建 Bean](../../example/bean-static-factory-create.md)
 
 ### 通过实例工厂方法进行实例化
+
 与静态工厂方法类似，**实例工厂方法**是通过已有的 `Bean` 中定义的方法来创建新的 `Bean`，而不是通过尚未创建的 `Bean` 的静态方法进行创建。
 
 由于是调用已有 `Bean` 的实例方法来创建 `Bean`，因此在 `XML` 配置中可以将 `class` 属性留空。在 `factory-bean` 属性中指定要使用的已有 `Bean`，再通过 `factory-method` 属性设置工厂方法的名称即可。其他配置方式与静态工厂方法基本一致。
