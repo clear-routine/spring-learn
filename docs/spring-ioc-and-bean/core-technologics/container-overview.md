@@ -46,7 +46,7 @@
 
 而如果使用的是 **Spring Boot**，情况就更简单了，通常**连 `web.xml` 都不需要了**，基本上采用的就是**纯注解的开发方式**，`Spring Boot` 会在启动阶段自动帮你完成 `IOC` 容器和 `Web` 环境的初始化。
 
-[XML 配置 + web.xml。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/zkk420ozdomwr2qb)
+[XML 配置 + web.xml](../../example/xml-config-web-xml.md)
 
 [注解配置 + web.xml。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/iz9gqp0dwl5e8m1o)
 
