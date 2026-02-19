@@ -123,4 +123,4 @@
 
 由于是调用已有 `Bean` 的实例方法来创建 `Bean`，因此在 `XML` 配置中可以将 `class` 属性留空。在 `factory-bean` 属性中指定要使用的已有 `Bean`，再通过 `factory-method` 属性设置工厂方法的名称即可。其他配置方式与静态工厂方法基本一致。
 
-[使用实例工厂方法创建 Bean。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/lr9syyv8drtfxwms)
+[使用实例工厂方法创建 Bean](../../example/bean-instance-factory-create.md)
