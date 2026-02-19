@@ -12,13 +12,13 @@
 
 在 IDEA 启动按钮旁边，需要先**配置一个正确的启动项**。启动项中各个配置的含义如下：
 
-+ **Name（名称）：**当前启动项的名称，自定义即可，方便自己区分。
-+ **Tomcat Server：**选择你已经下载并解压好的 **Tomcat 安装目录**。
-+ **Deployment directory：**选择你项目中 **`web.xml` 所在的目录**。
-+ **Use classpath of module：**选择**需要运行的模块**，`IDEA` 会从该模块中加载 `classpath`。
-+ **Context path：**设置当前项目的**访问根路径**。如果配置为 `/`，那么客户端只需要通过 **域名 + `/`** 就可以访问到该项目。
-+ **Server Port：**设置当前程序对外提供服务的**端口号**。
-+ **Admin Port：**设置 **Tomcat 管理指令执行的端口号**。比如，当你在 `IDEA` 里点击那个红色的 **Stop（停止）** 方块按钮时，`SmartTomcat` 插件其实就是在后台，向这个 **Admin Port** 发送了一条 `"SHUTDOWN"` 指令，让 `Tomcat` 自行关闭。
++ **Name（名称）**：当前启动项的名称，自定义即可，方便自己区分。
++ **Tomcat Server**：选择你已经下载并解压好的 **Tomcat 安装目录**。
++ **Deployment directory**：选择你项目中 **`web.xml` 所在的目录**。
++ **Use classpath of module**：选择**需要运行的模块**，`IDEA` 会从该模块中加载 `classpath`。
++ **Context path**：设置当前项目的**访问根路径**。如果配置为 `/`，那么客户端只需要通过 **域名 + `/`** 就可以访问到该项目。
++ **Server Port**：设置当前程序对外提供服务的**端口号**。
++ **Admin Port**：设置 **Tomcat 管理指令执行的端口号**。比如，当你在 `IDEA` 里点击那个红色的 **Stop（停止）** 方块按钮时，`SmartTomcat` 插件其实就是在后台，向这个 **Admin Port** 发送了一条 `"SHUTDOWN"` 指令，让 `Tomcat` 自行关闭。
 
 其余配置项一般保持默认即可，最后点击**确认**完成配置。
 
