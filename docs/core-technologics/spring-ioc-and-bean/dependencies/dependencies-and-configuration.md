@@ -156,7 +156,7 @@ orderService.userService = userService对象
 > 注意 ⚠️：在使用这种内部 `Bean` 写法时，必须确保外部 `Bean` 和内部 `Bean` 的作用域保持一致。也就是说，如果外部 `Bean` 是单例（`singleton`），那内部 `Bean` 也应该是单例，如果外部是多例（`prototype`），内部也应该是多例。否则就可能出现作用域不匹配的问题。
 >
 
-[内部 Bean。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/lyel2dqkgtsfcy4v)
+[内部 Bean](../../../example/inner-bean.md)
 
 # 集合
 

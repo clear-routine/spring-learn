@@ -35,6 +35,7 @@
 - [使用 name 进行匹配](example/constructor-arg-name-match.md)
 - [p-namespace](example/p-namespace.md)
 - [ref](example/ref.md)
+- [内部 Bean](example/inner-bean.md)
 
 ### 配置 (Config)
 
