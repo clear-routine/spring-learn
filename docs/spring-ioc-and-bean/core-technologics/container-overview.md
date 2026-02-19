@@ -48,7 +48,7 @@
 
 [XML 配置 + web.xml](../../example/xml-config-web-xml.md)
 
-[注解配置 + web.xml。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/iz9gqp0dwl5e8m1o)
+[注解配置 + web.xml](../../example/annotation-config-web-xml.md)
 
 > `Spring Framework` 本身**只专注于 IoC 容器和 AOP**，并不提供对外通信的能力。如果需要让应用对外提供服务，就必须借助 **Servlet** 或其他 `Web` 容器技术来实现。
 >
