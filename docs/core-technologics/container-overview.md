@@ -1,6 +1,6 @@
 `Spring` 提供了一个被称为“**总控制中心**”的接口 —— **ApplicationContext**。从本质上讲，它本身就是 **Spring 的 IoC 容器**。
 
-你不需要自己去 `new` 对象，对象的创建全部交给 `ApplicationContext` 来完成；它不仅负责 **创建对象（**`**bean**`**）**，还会 **给对象设置属性、注入依赖**，并且把对象之间的关系提前“接好”。比如 **A 依赖 B，B 又依赖 C**，这些关系都会由它统一管理和装配完成。
+你不需要自己去 `new` 对象，对象的创建全部交给 `ApplicationContext` 来完成；它不仅负责**创建对象（bean）**，还会 **给对象设置属性、注入依赖**，并且把对象之间的关系提前“接好”。比如 **A 依赖 B，B 又依赖 C**，这些关系都会由它统一管理和装配完成。
 
 一句话总结：**ApplicationContext 就是 Spring 的“对象工厂 + 调度中心”**，它负责创建 `bean`、配置 `bean`，并把各个 `bean` 之间的依赖关系完整地组织起来。
 
@@ -18,7 +18,7 @@
 
 1. **带注解的组件类**：也就是通过各种注解直接标记在类上的方式，让 `Spring` 知道这是一个需要被管理的组件。
 2. **带有工厂方法的配置类**：通常使用配置类加方法的形式，明确告诉 `Spring` 对象应该如何被创建，以及创建过程中需要哪些依赖。
-3. **外部配置文件（比较老，但现在依然在用）：**`XML`**。**
+3. **外部配置文件**（比较老，但现在依然在用）：`XML`。
 
 `Spring` 支持多种“配置说明书”的写法，你可以根据自己的习惯或项目需要选择任何一种。无论是注解、配置类，还是外部配置文件，本质上做的都是同一件事，**把整个应用的对象创建规则和依赖关系描述清楚**。只要配置写完整，不管采用哪种方式，都可以把整个应用“搭”起来。
 
@@ -37,28 +37,28 @@
 
 在大多数应用场景下，其实**不需要手动编写** `AnnotationConfigApplicationContext`、`ClassPathXmlApplicationContext` 这一类显式实例化代码来创建 `Spring IOC` 容器。
 
-比如在**普通的 Web 应用**中，就可以通过 **配置 **`**web.xml**` 的方式来**替代手动创建 Spring IOC 容器对象**。常见的组合方式有：
+比如在**普通的 Web 应用**中，就可以通过**配置 `web.xml`** 的方式来**替代手动创建 Spring IOC 容器对象**。常见的组合方式有：
 
 + **XML 配置 + web.xml**（传统方式）。
 + **注解配置 + web.xml**（传统 `Spring MVC` 项目）。
 
-而如果使用的是 **Spring Boot**，情况就更简单了，通常**连 **`**web.xml**`** 都不需要了**，基本上采用的就是**纯注解的开发方式**，`Spring Boot` 会在启动阶段自动帮你完成 `IOC` 容器和 `Web` 环境的初始化。
+而如果使用的是 **Spring Boot**，情况就更简单了，通常**连 `web.xml` 都不需要了**，基本上采用的就是**纯注解的开发方式**，`Spring Boot` 会在启动阶段自动帮你完成 `IOC` 容器和 `Web` 环境的初始化。
 
 [XML 配置 + web.xml。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/zkk420ozdomwr2qb)
 
 [注解配置 + web.xml。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/iz9gqp0dwl5e8m1o)
 
 > `Spring Framework` 本身**只专注于 IoC 容器和 AOP**，并不提供对外通信的能力。如果需要让应用对外提供服务，就必须借助 **Servlet** 或其他 `Web` 容器技术来实现。
->
 
 虽然 `Spring` 容器在技术上可以管理任何普通类，并将其注册为 `Bean`，但在实际开发中，我们通常只会把**真正参与系统运行和协作的业务组件**交给 `Spring` 管理。例如，服务层对象（`Service`）、持久层对象（`Repository / DAO`）、表示层对象（如 `Web Controller`），以及一些基础设施组件（如 `JPA` 的 `EntityManagerFactory`、`JMS` 队列等），这样可以让依赖注入和对象协作更加方便、清晰。
 
 而实体类（`Entity`）一般不会交由 `Spring` 容器管理，因为它们本质上只是**数据的载体**，用于描述业务数据结构，本身不承载业务行为，也不直接参与业务逻辑的执行。将实体类纳入 `Spring` 管理不仅收益不大，反而可能增加理解和维护成本。
 
-# 基于 XML 的配置元数据组合。
+# 基于 XML 的配置元数据组合
+
 项目规模变大后，如果把所有配置都堆在一个文件里，维护和排查问题会变得非常困难。为了解决这个问题，可以将 `XML` 中的 `Bean` 定义拆分到多个 `XML` 文件中。每个文件对应一个逻辑层或功能模块，结构更清晰，更容易维护和查找相关配置，团队协作时冲突更少、效率更高。
 
-```java
+```
 ❌ 不好的方式（所有配置在一个文件）：
 application.xml (1000 行)
 ├── User 相关配置
@@ -80,7 +80,7 @@ application.xml (主配置)
 
 [多模块 XML 和主配置文件。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/ybbetiuzw8hxm3fi)
 
-# <font style="color:rgb(20, 24, 24);">使用容器。</font>
+# 使用容器
 `ApplicationContext` 中可以存放各种各样的对象，通过调用 `getBean` 方法即可获取对应的 `Bean` 实例。获取 `Bean` 的方式有多种，具体可以参考下面的代码示例。
 
 [使用容器。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/zrtu79y3aovvxxvv)
