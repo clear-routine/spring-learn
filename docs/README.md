@@ -22,6 +22,7 @@
 - [动态加载 bean](example/dynamic-load-bean.md)
 - [禁止 Spring 的 Bean 覆盖行为](example/spring-bean-override-disabled.md)
 - [Spring 的默认 Bean 覆盖行为](example/spring-bean-override-default.md)
+- [@Bean 注解进行强行覆盖](example/bean-annotation-force-override.md)
 
 ### 配置 (Config)
 

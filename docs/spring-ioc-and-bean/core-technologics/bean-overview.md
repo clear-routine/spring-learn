@@ -53,9 +53,10 @@
 
 如果你是通过 `@Configuration + @Bean` 的方式来注入对象，@Bean 修饰的对象都会生效并覆盖同名对象。这是 `Spring` 官方刻意的设计，并不被认为是“非法覆盖”。原因在于 `Spring` 的设计取向，`@Bean` 属于**显式配置**，而组件扫描（`@Component` / `@Service` 等）只是一种**隐式的默认行为**，遵循的是“**显式 > 隐式**”的原则。
 
-[@Bean 注解进行强行覆盖。](https://www.yuque.com/diqiyexu-vgtwd/kgih55/pdb89a03gyr1gr6o)
+[@Bean 注解进行强行覆盖](../../example/bean-annotation-force-override.md)
 
 ## Naming Beans
+
 每个 `Bean` 都必须有一个“名字”。`Bean` 本质上是 `Spring` 容器中的一个对象实例。可以把 `Spring` 容器理解成一个大仓库，里面存放着很多对象（也就是各种 `Bean`）。如果没有名字，就没办法区分这些不同的 `Bean`。
 
 每个 `Bean` 至少有一个标识符，并且这个标识符在容器中必须是唯一的。通常情况下，一个 `Bean` 只有一个名字；如果存在多个名字，那么其他的名字就是这个 `Bean` 的“别名（`alias`）”。
@@ -71,6 +72,7 @@
 当你使用注解对 `Bean` 进行标注时，`Spring` 会在扫描到对应类时，自动将其实例化并注入到容器中管理。此时，`Spring` 给 `Bean` 命名的规则也是默认取类名的首字母小写。但也有特殊情况，如果类名前两个字母都是大写，则保持原样，不做首字母小写，例如 `URLService` 的 `Bean` 名称仍然是 `URLService`。`Spring` 的自动 `Bean` 命名始终遵循 `java.beans.Introspector.decapitalize()` 的规则。
 
 ## Instantiating Beans
+
 前面提到过，`Spring` 实例化 `Bean` 是通过 `BeanDefinition` 完成的，`BeanDefinition` 本质上可以理解为一份“配方”或“说明书”。
 
 其中会描述：
@@ -89,6 +91,7 @@
 其实，这个属性会在实例化 `Bean` 的时候发挥关键作用。它相当于告诉 `Spring`：“等会儿创建对象时，需要用到的类就在这里。” 也就是说，`class` 属性指定了要实例化的具体类，`Spring` 会根据这里提供的类信息创建对应的对象。
 
 ### 使用构造函数进行实例化
+
 那什么叫“构造函数方式实例化”呢？其实就是最常见、最普通的情况，在 `class` 属性中直接写入目标类的全限定类名，`Spring` 会根据这个类名完成依赖注入。
 
 这种方式占绝大多数使用场景。本质上可以理解为等价于我们在代码中使用 `new` 创建对象，只不过这个创建过程由 `Spring` 在容器内部帮我们完成了。
