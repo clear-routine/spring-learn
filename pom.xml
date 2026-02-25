@@ -35,6 +35,7 @@
         <module>spring-bean-ref</module>
         <module>spring-bean-collections</module>
         <module>spring-bean-null-and-empty</module>
+        <module>spring-bean-depends-on</module>
     </modules>
 
     <properties>

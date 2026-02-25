@@ -4,17 +4,11 @@
 
 ## 目录
 
-### 核心技术 (Core Technologies)
+### Spring IOC And Bean
 
-#### Spring IOC And Bean
+#### 核心技术 (Core Technologies)
 
-- [容器概述](core-technologics/spring-ioc-and-bean/container-overview.md)
-- [Bean 概述](core-technologics/spring-ioc-and-bean/bean-overview.md)
-
-##### 依赖注入 (Dependencies)
-
-- [依赖注入](core-technologics/spring-ioc-and-bean/dependencies/dependency-injection.md)
-- [依赖与配置](core-technologics/spring-ioc-and-bean/dependencies/dependencies-and-configuration.md)
+- [容器概述](spring-ioc-and-bean/core-technologics/container-overview.md)
 
 ### 示例 (Example)
 
@@ -24,28 +18,11 @@
 - [多模块 XML 配置](example/multi-module-xml-config.md)
 - [多模块 XML 和主配置文件](example/multi-module-xml-and-main-config.md)
 - [使用容器](example/using-container.md)
-- [动态加载 bean](example/dynamic-load-bean.md)
-- [禁止 Spring 的 Bean 覆盖行为](example/spring-bean-override-disabled.md)
-- [Spring 的默认 Bean 覆盖行为](example/spring-bean-override-default.md)
-- [@Bean 注解进行强行覆盖](example/bean-annotation-force-override.md)
-- [bean 别名](example/bean-alias.md)
-- [使用构造函数创建 Bean](example/bean-constructor-create.md)
-- [使用静态工厂方法创建 Bean](example/bean-static-factory-create.md)
-- [使用实例工厂方法创建 Bean](example/bean-instance-factory-create.md)
-- [使用 name 进行匹配](example/constructor-arg-name-match.md)
-- [p-namespace](example/p-namespace.md)
-- [c-namespace](example/c-namespace.md)
-- [复合属性名](example/property-path.md)
-- [ref](example/ref.md)
-- [内部 Bean](example/inner-bean.md)
-- [集合注入](example/collections-injection.md)
-- [空字符串和 null 的注入](example/null-and-empty-injection.md)
 
 ### 配置 (Config)
 
 - [IDEA 如何创建多模块项目](config/idea-multi-module-project.md)
 - [多模块项目如何配置 Tomcat](config/multi-module-tomcat-config.md)
-- [日志配置](config/log-config.md)
 
 ---
 

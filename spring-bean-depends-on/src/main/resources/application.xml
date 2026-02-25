@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    数据源用户 Bean
+    使用 depends-on 确保 driverRegister 先于 dataSourceUser 初始化
+
+    注意：这里没有使用 <property ref="driverRegister"/> 或 @Autowired，
+    因为 DataSourceUser 并不直接持有 DriverRegister 的引用，
+    而是依赖于 DriverRegister 的初始化操作（静态方法调用）。
+-->
+    <bean id="dataSourceUser"
+          class="com.tt.DataSourceUser"
+          depends-on="driverRegister"/>
+
+    <!-- 
+        数据库驱动注册 Bean
+        这个 Bean 需要在 DataSourceUser 之前初始化
+    -->
+    <bean id="driverRegister" class="com.tt.DriverRegister"/>
+</beans>
