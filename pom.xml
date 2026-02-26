@@ -36,6 +36,7 @@
         <module>spring-bean-collections</module>
         <module>spring-bean-null-and-empty</module>
         <module>spring-bean-depends-on</module>
+        <module>spring-bean-lazy</module>
     </modules>
 
     <properties>

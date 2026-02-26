@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 延迟 Bean：本应首次 getBean 时才创建 -->
+    <bean id="lazyBean" class="com.tt.HeavyBean" lazy-init="true">
+        <constructor-arg value="lazyService"/>
+    </bean>
+
+    <!-- 非延迟 Bean 依赖延迟 Bean：启动时 lazyService 会被迫提前创建 -->
+    <bean id="eagerBean" class="com.tt.HeavyBean">
+        <constructor-arg value="eagerBean"/>
+        <property name="dependency" ref="lazyBean"/>
+    </bean>
+
+</beans>

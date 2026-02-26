@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 默认预实例化：容器启动时立即创建 -->
+    <bean id="eagerBean" class="com.tt.HeavyBean">
+        <constructor-arg value="eagerBean(XML)"/>
+    </bean>
+
+    <!-- lazy-init="true"：延迟初始化，首次 getBean 时才创建 -->
+    <bean id="lazyBean" class="com.tt.HeavyBean" lazy-init="true">
+        <constructor-arg value="lazyBean(XML)"/>
+    </bean>
+
+</beans>
