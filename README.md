@@ -4,7 +4,7 @@
 
 ## 文档
 
-教程文档位于 [docs/](docs/) 目录，文档索引见 [docs/README.md](docs/README.md)。
+教程文档 [语雀知识库](https://www.yuque.com/diqiyexu-vgtwd/kgih55)
 
 ## 使用说明
 
