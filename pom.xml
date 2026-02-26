@@ -37,6 +37,7 @@
         <module>spring-bean-null-and-empty</module>
         <module>spring-bean-depends-on</module>
         <module>spring-bean-lazy</module>
+        <module>spring-bean-autowire-modes</module>
     </modules>
 
     <properties>

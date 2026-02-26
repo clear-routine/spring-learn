@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- autowire="byName"：按属性名匹配 Bean id -->
+    <!-- 属性 setOrderRepository(..) → 查找名为 setOrderRepository 的方法 -->
+    <bean id="orderRepository" class="com.tt.repository.OrderRepository"/>
+
+    <bean id="orderService" class="com.tt.service.OrderService" autowire="byName"/>
+
+    <!-- 属性 setOrderService(..) → 查找名为 setOrderService 的方法 -->
+    <bean id="orderController" class="com.tt.controller.OrderController" autowire="byName"/>
+
+</beans>

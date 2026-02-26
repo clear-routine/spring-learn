@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- autowire="constructor"：按构造函数参数类型注入 -->
+    <!-- 构造函数 OrderService(OrderRepository) → 查找 OrderRepository 类型的 Bean -->
+    <bean id="repo" class="com.tt.repository.OrderRepository"/>
+
+    <bean id="orderService" class="com.tt.service.OrderService" autowire="constructor"/>
+
+    <!-- 构造函数 OrderController(OrderService) → 查找 OrderService 类型的 Bean -->
+    <bean id="orderController" class="com.tt.controller.OrderController" autowire="constructor"/>
+
+</beans>

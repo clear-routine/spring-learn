@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- autowire="byType"：按属性类型匹配 Bean -->
+    <!-- 属性类型 OrderRepository → 查找该类型的 Bean（容器中需恰好一个） -->
+    <!-- Bean id 可任意，不要求与属性名一致 -->
+    <bean id="repo" class="com.tt.repository.OrderRepository"/>
+
+    <bean id="orderService" class="com.tt.service.OrderService" autowire="byType"/>
+
+    <bean id="orderController" class="com.tt.controller.OrderController" autowire="byType"/>
+
+</beans>
