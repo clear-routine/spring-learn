@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 原型 Bean：每次从容器获取都是新实例 -->
+    <bean id="prototypeBean" class="com.tt.PrototypeBean" scope="prototype"/>
+
+    <!--
+        方法注入（lookup-method）：
+        Spring 用 CGLIB 生成 SingletonBean 的子类，重写 getPrototypeBean() 方法。
+        每次调用时，子类实现会执行 context.getBean("prototypeBean")，拿到新实例。
+    -->
+    <bean id="singletonBean" class="com.tt.SingletonBean">
+        <lookup-method name="getPrototypeBean" bean="prototypeBean"/>
+    </bean>
+
+    <!-- 错误示范：属性注入 prototype，singleton 永远持有同一个实例 -->
+    <bean id="singletonWithProperty" class="com.tt.SingletonWithPropertyInjection">
+        <property name="prototypeBean" ref="prototypeBean"/>
+    </bean>
+
+</beans>

@@ -38,6 +38,9 @@
         <module>spring-bean-depends-on</module>
         <module>spring-bean-lazy</module>
         <module>spring-bean-autowire-modes</module>
+        <module>spring-bean-lookup-method-xml</module>
+        <module>spring-bean-lookup-method-annotation</module>
+        <module>spring-bean-singleton-scope</module>
     </modules>
 
     <properties>
