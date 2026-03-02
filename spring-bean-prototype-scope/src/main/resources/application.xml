@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 启用 JSR-250 注解（@PostConstruct, @PreDestroy）处理 -->
+    <context:annotation-config/>
+
+    <!-- 原型作用域 Bean：每次 getBean 都会创建新实例 -->
+    <bean id="prototypeBean" class="com.tt.PrototypeScopedBean" scope="prototype"/>
+
+    <!-- 自定义后处理器（com.tt.PrototypeBeanCleanupProcessor）：登记 Bean 并在容器关闭时执行自定义销毁。
+        其 destroy() 仅在此 bean 被销毁时调用一次（本 bean 为单例，故在容器关闭时触发）。 -->
+    <bean class="com.tt.PrototypeBeanCleanupProcessor"/>
+</beans>

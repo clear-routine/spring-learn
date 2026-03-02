@@ -41,6 +41,7 @@
         <module>spring-bean-lookup-method-xml</module>
         <module>spring-bean-lookup-method-annotation</module>
         <module>spring-bean-singleton-scope</module>
+        <module>spring-bean-prototype-scope</module>
     </modules>
 
     <properties>
