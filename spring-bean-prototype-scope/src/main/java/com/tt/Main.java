@@ -17,10 +17,6 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
-        System.out.println(">>> 获取单例 Bean（同一类，scope=singleton）：");
-        PrototypeScopedBean singleton = context.getBean("singletonBean", PrototypeScopedBean.class);
-        System.out.println("  实例 ID: " + singleton.getInstanceId() + "\n");
-
         System.out.println(">>> 第一次 getBean，创建第一个原型实例：");
         System.out.println();
         PrototypeScopedBean bean1 = context.getBean("prototypeBean", PrototypeScopedBean.class);
@@ -31,8 +27,7 @@ public class Main {
         PrototypeScopedBean bean2 = context.getBean("prototypeBean", PrototypeScopedBean.class);
         System.out.println("  实例 ID: " + bean2.getInstanceId() + "\n");
 
-        System.out.println(">>> 验证单例：多次 getBean 返回同一实例: " + (singleton == context.getBean("singletonBean", PrototypeScopedBean.class)));
-        System.out.println(">>> 验证原型：每次 getBean 都是新实例: " + (bean1 != bean2));
+        System.out.println(">>> 验证：每次 getBean 都是新实例: " + (bean1 != bean2));
         System.out.println();
 
         System.out.print(">>> 关闭容器，触发自定义后置钩子（PrototypeBeanCleanupProcessor.destroy）：");
