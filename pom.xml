@@ -42,6 +42,8 @@
         <module>spring-bean-lookup-method-annotation</module>
         <module>spring-bean-singleton-scope</module>
         <module>spring-bean-prototype-scope</module>
+        <module>spring-request-context-webxml</module>
+        <module>spring-request-context-initializer</module>
     </modules>
 
     <properties>
