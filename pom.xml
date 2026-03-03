@@ -44,6 +44,8 @@
         <module>spring-bean-prototype-scope</module>
         <module>spring-request-context-webxml</module>
         <module>spring-request-context-initializer</module>
+        <module>spring-request-context-filter-webxml</module>
+        <module>spring-request-context-filter-initializer</module>
     </modules>
 
     <properties>
