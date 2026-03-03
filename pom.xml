@@ -46,6 +46,8 @@
         <module>spring-request-context-initializer</module>
         <module>spring-request-context-filter-webxml</module>
         <module>spring-request-context-filter-initializer</module>
+        <module>spring-bean-request-scope-xml</module>
+        <module>spring-bean-request-scope-annotation</module>
     </modules>
 
     <properties>
