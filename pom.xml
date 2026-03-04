@@ -48,6 +48,8 @@
         <module>spring-request-context-filter-initializer</module>
         <module>spring-bean-request-scope-xml</module>
         <module>spring-bean-request-scope-annotation</module>
+        <module>spring-bean-session-scope-xml</module>
+        <module>spring-bean-session-scope-annotation</module>
     </modules>
 
     <properties>
