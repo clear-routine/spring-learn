@@ -50,6 +50,8 @@
         <module>spring-bean-request-scope-annotation</module>
         <module>spring-bean-session-scope-xml</module>
         <module>spring-bean-session-scope-annotation</module>
+        <module>spring-bean-application-scope-xml</module>
+        <module>spring-bean-application-scope-annotation</module>
     </modules>
 
     <properties>
