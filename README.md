@@ -4,7 +4,7 @@
 
 ## 文档
 
-教程文档 [Spring!](https://www.yuque.com/diqiyexu-vgtwd/kgih55)
+[Spring!](https://www.yuque.com/diqiyexu-vgtwd/kgih55)
 
 ## 使用说明
 
