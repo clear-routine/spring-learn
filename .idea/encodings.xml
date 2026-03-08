@@ -35,6 +35,8 @@
     <file url="file://$PROJECT_DIR$/spring-bean-id-name-alias/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-idref/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-idref/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-bean-inject-request-session/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-bean-inject-request-session/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-inner-bean/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-inner-bean/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-instance-factory/src/main/java" charset="UTF-8" />
