@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userRepository" class="com.tt.repository.UserRepository"/>
+    <bean id="userController" class="com.tt.controller.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <!-- proxy-target-class="false"：使用 JDK 动态代理，目标类必须实现接口，注入时通过接口类型 -->
+    <bean id="userService" class="com.tt.service.DefaultUserService" scope="session">
+        <aop:scoped-proxy proxy-target-class="false"/>
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+</beans>

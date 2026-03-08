@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userRepository" class="com.tt.repository.UserRepository"/>
+    <bean id="userController" class="com.tt.controller.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <!-- session 作用域 + scoped-proxy：UserController (singleton) 注入的是代理，每次调用从当前 session 获取 -->
+    <bean id="userService" class="com.tt.service.UserService" scope="session">
+        <aop:scoped-proxy/>
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+</beans>

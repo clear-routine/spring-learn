@@ -52,6 +52,8 @@
         <module>spring-bean-session-scope-annotation</module>
         <module>spring-bean-application-scope-xml</module>
         <module>spring-bean-application-scope-annotation</module>
+        <module>spring-bean-session-scoped-proxy</module>
+        <module>spring-bean-session-scoped-proxy-jdk</module>
     </modules>
 
     <properties>
