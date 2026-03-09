@@ -56,6 +56,8 @@
         <module>spring-bean-session-scoped-proxy-jdk</module>
         <module>spring-bean-lifecycle</module>
         <module>spring-bean-lifecycle-annotation</module>
+        <module>spring-bean-lifecycle-init-method-xml</module>
+        <module>spring-bean-lifecycle-init-method-annotation</module>
     </modules>
 
     <properties>
