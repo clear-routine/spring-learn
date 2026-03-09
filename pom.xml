@@ -55,6 +55,7 @@
         <module>spring-bean-session-scoped-proxy</module>
         <module>spring-bean-session-scoped-proxy-jdk</module>
         <module>spring-bean-lifecycle</module>
+        <module>spring-bean-lifecycle-annotation</module>
     </modules>
 
     <properties>
