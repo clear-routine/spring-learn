@@ -58,6 +58,9 @@
         <module>spring-bean-lifecycle-annotation</module>
         <module>spring-bean-lifecycle-init-method-xml</module>
         <module>spring-bean-lifecycle-init-method-annotation</module>
+        <module>spring-bean-smart-initializing-singleton</module>
+        <module>spring-bean-context-refreshed-event-listener</module>
+        <module>spring-bean-context-refreshed-event-annotation</module>
     </modules>
 
     <properties>
