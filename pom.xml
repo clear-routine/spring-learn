@@ -62,6 +62,7 @@
         <module>spring-bean-context-refreshed-event-listener</module>
         <module>spring-bean-context-refreshed-event-annotation</module>
         <module>spring-bean-destroy-method-inference</module>
+        <module>spring-bean-autocloseable-closeable</module>
     </modules>
 
     <properties>
