@@ -61,6 +61,7 @@
         <module>spring-bean-smart-initializing-singleton</module>
         <module>spring-bean-context-refreshed-event-listener</module>
         <module>spring-bean-context-refreshed-event-annotation</module>
+        <module>spring-bean-destroy-method-inference</module>
     </modules>
 
     <properties>

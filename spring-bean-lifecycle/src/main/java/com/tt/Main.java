@@ -22,8 +22,7 @@ public class Main {
          * 因为 ApplicationContext 接口本身没有 close() 和 registerShutdownHook() 方法，
          * 这两个方法定义在子接口 ConfigurableApplicationContext 中，用于正确触发 DisposableBean.destroy()。
          *
-         * 其他可选实现：AnnotationConfigApplicationContext（Java 配置）、
-         * FileSystemXmlApplicationContext（从文件系统加载 XML）等。
+         * 其他可选实现：AnnotationConfigApplicationContext（Java 配置）、FileSystemXmlApplicationContext（从文件系统加载 XML）等。
          */
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
