@@ -63,6 +63,7 @@
         <module>spring-bean-context-refreshed-event-annotation</module>
         <module>spring-bean-destroy-method-inference</module>
         <module>spring-bean-autocloseable-closeable</module>
+        <module>spring-bean-destroy-method-inferred-xml</module>
     </modules>
 
     <properties>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 未配置 destroy-method，即使有 close() 也不会自动调用 -->
+    <bean id="userRepository" class="com.tt.repository.UserRepository"/>
+
+    <!-- destroy-method="(inferred)"：Spring 自动检测 close() 或 shutdown()，容器关闭时调用 -->
+    <bean id="userService" class="com.tt.service.UserService"
+          destroy-method="(inferred)">
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+    <bean id="userController" class="com.tt.controller.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+</beans>
