@@ -66,6 +66,8 @@
         <module>spring-bean-destroy-method-inferred-xml</module>
         <module>spring-bean-default-init-destroy-xml</module>
         <module>spring-bean-default-init-destroy-method</module>
+        <module>spring-bean-lifecycle-callback-order</module>
+        <module>spring-bean-lifecycle-same-method</module>
     </modules>
 
     <properties>
