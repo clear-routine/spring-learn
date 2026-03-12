@@ -64,6 +64,8 @@
         <module>spring-bean-destroy-method-inference</module>
         <module>spring-bean-autocloseable-closeable</module>
         <module>spring-bean-destroy-method-inferred-xml</module>
+        <module>spring-bean-default-init-destroy-xml</module>
+        <module>spring-bean-default-init-destroy-method</module>
     </modules>
 
     <properties>

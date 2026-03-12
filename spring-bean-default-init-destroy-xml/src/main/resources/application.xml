@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
+
+    <!-- 方法名不同时，单个 Bean 显式指定可覆盖 default-init-method / default-destroy-method -->
+    <bean id="userRepository" class="com.tt.repository.UserRepository"
+          init-method="setup"
+          destroy-method="cleanup"/>
+
+    <bean id="userService" class="com.tt.service.UserService">
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+    <bean id="userController" class="com.tt.controller.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+</beans>

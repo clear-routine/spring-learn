@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
+
+    <!-- 未指定 init-method、destroy-method，由 default-* 统一生效 -->
+    <bean id="userRepository" class="com.tt.repository.UserRepository"/>
+
+    <bean id="userService" class="com.tt.service.UserService">
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+    <!-- UserController 无 init/destroy 方法，容器会跳过，不报错 -->
+    <bean id="userController" class="com.tt.controller.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+</beans>
