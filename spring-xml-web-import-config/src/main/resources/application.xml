@@ -6,13 +6,13 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 主配置文件：使用 <import/> 导入各个模块的配置 -->
-    
+
     <!-- 导入用户模块配置 -->
     <!-- 主配置文件中通过 <import /> 引入的文件，必须是合法的 Spring XML Bean 定义文件，
          而且路径是相对于当前主配置文件的相对路径。例如，user-config.xml 表示被引入的
          配置文件与主配置文件位于同一目录下。 -->
     <import resource="user-config.xml"/>
-    
+
     <!-- 导入产品模块配置 -->
     <import resource="product-config.xml"/>
 

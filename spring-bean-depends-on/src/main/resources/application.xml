@@ -17,7 +17,7 @@
           class="com.tt.DataSourceUser"
           depends-on="driverRegister"/>
 
-    <!-- 
+    <!--
         数据库驱动注册 Bean
         这个 Bean 需要在 DataSourceUser 之前初始化
     -->

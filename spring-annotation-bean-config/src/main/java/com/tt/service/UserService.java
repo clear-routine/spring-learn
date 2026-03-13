@@ -4,7 +4,7 @@ import com.tt.repository.UserRepository;
 
 /**
  * UserService - 用户业务逻辑层
- * 
+ *
  * 在 Java Config 的 @Bean 方式中：
  * - 不需要使用 @Service 注解
  * - 不需要使用 @Autowired 注解进行依赖注入
@@ -18,7 +18,7 @@ public class UserService {
     /**
      * Setter 方法，用于注入 UserRepository 依赖
      * 在 AppConfig 的 userService() 方法中会被调用
-     * 
+     *
      * @param userRepository UserRepository 实例
      */
     public void setUserRepository(UserRepository userRepository) {

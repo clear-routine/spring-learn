@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Spring Bean 获取方式示例
- * 
+ *
  * 演示三种从 Spring 容器获取 Bean 的方式
  */
 public class Main {

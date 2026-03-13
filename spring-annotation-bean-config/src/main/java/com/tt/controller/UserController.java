@@ -4,7 +4,7 @@ import com.tt.service.UserService;
 
 /**
  * UserController - 用户控制层
- * 
+ *
  * 在 Java Config 的 @Bean 方式中：
  * - 不需要使用 @Controller 注解
  * - 不需要使用 @Autowired 注解进行依赖注入
@@ -18,7 +18,7 @@ public class UserController {
     /**
      * Setter 方法，用于注入 UserService 依赖
      * 在 AppConfig 的 userController() 方法中会被调用
-     * 
+     *
      * @param userService UserService 实例
      */
     public void setUserService(UserService userService) {

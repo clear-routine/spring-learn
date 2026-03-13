@@ -24,7 +24,6 @@ public class DatabasePool implements SmartLifecycle {
 
     @Override
     public void stop() {
-
         System.out.println(">>> [DatabasePool] stop() phase=0");
         this.running = false;
     }

@@ -7,10 +7,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  * Main - 应用程序入口
- * 
+ *
  * 使用 AnnotationConfigApplicationContext 加载基于 Java Config 的配置类
  * 与 XML 配置方式（ClassPathXmlApplicationContext）不同，这里使用注解配置方式
- * 
+ *
  * 本模块使用 @Bean 方式手动注册 Bean，而不是 @ComponentScan 自动扫描
  */
 public class Main {

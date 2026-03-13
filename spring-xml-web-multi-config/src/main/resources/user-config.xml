@@ -6,7 +6,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 用户模块配置 -->
-    
+
     <!-- 用户数据访问层 -->
     <bean id="userRepository" class="com.tt.repository.UserRepository"/>
 

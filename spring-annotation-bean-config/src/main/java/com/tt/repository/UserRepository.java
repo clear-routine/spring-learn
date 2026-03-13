@@ -2,7 +2,7 @@ package com.tt.repository;
 
 /**
  * UserRepository - 用户数据访问层
- * 
+ *
  * 在 Java Config 的 @Bean 方式中：
  * - 不需要使用 @Repository 注解
  * - 不需要使用任何 Spring 注解

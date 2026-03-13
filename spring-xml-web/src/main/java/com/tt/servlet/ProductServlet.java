@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 /**
  * 产品接口 Servlet：处理 HTTP 请求
  * 访问路径：/product
- * 
+ *
  * 架构：Servlet -> Controller -> Service -> Repository
  */
 public class ProductServlet extends HttpServlet {
@@ -22,15 +22,15 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         // 从 Spring 容器中获取 bean（容器已通过 ContextLoaderListener 自动创建）
         WebApplicationContext context = WebApplicationContextUtils
                 .getWebApplicationContext(getServletContext());
-        
+
         // 从 Controller 获取数据（遵循 MVC 分层架构）
         ProductController controller = context.getBean(ProductController.class);
         String result = controller.getProduct();
-        
+
         // 返回接口的返回值
         response.setContentType("text/plain;charset=UTF-8");
         PrintWriter out = response.getWriter();

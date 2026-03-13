@@ -10,7 +10,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 
 /**
  * 方式二：WebApplicationInitializer 纯 Java 配置方式（推荐）
- * 
+ *
  * 无需 web.xml，Spring 会在应用启动时自动发现并调用所有 WebApplicationInitializer 实现。
  * 在本类中通过 addListener 注册 RequestContextListener，实现请求到线程的绑定。
  */
