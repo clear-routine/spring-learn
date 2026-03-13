@@ -2,7 +2,6 @@ package com.tt.config;
 
 import com.tt.servlet.UserServlet;
 import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;

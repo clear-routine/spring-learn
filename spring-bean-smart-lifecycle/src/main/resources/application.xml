@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Phased：启动时 phase 小的先启动，停止时 phase 大的先停止 -->
+    <bean id="loggerComponent" class="com.tt.LoggerComponent"/>
+    <bean id="databasePool" class="com.tt.DatabasePool"/>
+    <bean id="messageConsumer" class="com.tt.MessageConsumer"/>
+
+</beans>

@@ -1,7 +1,6 @@
 package com.tt.servlet;
 
 import com.tt.controller.UserController;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

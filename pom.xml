@@ -69,6 +69,7 @@
         <module>spring-bean-lifecycle-callback-order</module>
         <module>spring-bean-lifecycle-same-method</module>
         <module>spring-bean-lifecycle-interface</module>
+        <module>spring-bean-smart-lifecycle</module>
     </modules>
 
     <properties>
