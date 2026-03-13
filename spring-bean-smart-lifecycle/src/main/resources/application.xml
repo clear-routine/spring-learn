@@ -5,9 +5,11 @@
         http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Phased：启动时 phase 小的先启动，停止时 phase 大的先停止 -->
-    <bean id="loggerComponent" class="com.tt.LoggerComponent"/>
-    <bean id="databasePool" class="com.tt.DatabasePool"/>
-    <bean id="messageConsumer" class="com.tt.MessageConsumer"/>
+    <!-- 修改每阶段超时时间（毫秒），默认 30 秒 -->
+    <bean id="lifecycleProcessor" class="org.springframework.context.support.DefaultLifecycleProcessor">
+        <property name="timeoutPerShutdownPhase" value="10000"/>
+    </bean>
+
+    <bean id="asyncShutdownComponent" class="com.tt.AsyncShutdownComponent"/>
 
 </beans>
