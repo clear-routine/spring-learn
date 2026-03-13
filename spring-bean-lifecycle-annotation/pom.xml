@@ -20,7 +20,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.3.21</version>
+            <version>${spring.version}</version>
         </dependency>
         <!-- @PostConstruct、@PreDestroy 属于 JSR-250，Java 9+ 需显式引入 -->
         <dependency>

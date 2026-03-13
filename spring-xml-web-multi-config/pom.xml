@@ -20,8 +20,6 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Spring 版本设成希望的 6.2.x -->
-        <spring.version>6.2.15</spring.version>
     </properties>
 
     <dependencies>
