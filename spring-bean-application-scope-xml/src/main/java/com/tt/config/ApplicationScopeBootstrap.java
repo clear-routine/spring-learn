@@ -27,22 +27,8 @@ public class ApplicationScopeBootstrap implements ApplicationContextAware, Servl
 
     @Override
     public void afterPropertiesSet() {
+
         UserController controller = applicationContext.getBean(UserController.class);
         servletContext.setAttribute(ATTR_KEY, controller);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
