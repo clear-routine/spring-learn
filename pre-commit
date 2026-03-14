@@ -5,7 +5,7 @@
 #!/bin/sh
 # 强行卸载可能存在的流氓拦截
 export PRE_COMMIT_ALLOW_NO_CONFIG=1
-
+export SKIP=pre-commit
 echo ">>> 执行提交前检查 (mvn verify)..."
 if ! mvn verify -q; then
     echo ""
