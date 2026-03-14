@@ -31,3 +31,4 @@ public class ApplicationScopeBootstrap implements ApplicationContextAware, Servl
         servletContext.setAttribute(ATTR_KEY, controller);
     }
 }
+
