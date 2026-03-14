@@ -1,3 +1,9 @@
 #!/bin/sh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-mvn verify -q >/dev/null 2>&1 || { echo '🙁 项目编译异常，请处理完成后提交！'; exit 1; }
+output=$(mvn verify -q 2>&1); ret=$?
+if [ $ret -ne 0 ]; then
+    echo '🙁 项目编译异常，请处理完成后提交！'
+    echo ''
+    echo "$output"
+    exit 1
+fi
