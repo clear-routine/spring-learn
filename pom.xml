@@ -75,7 +75,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <spring.version>6.2.17</spring.version>
-        <checkstyle.config.location>${session.executionRootDirectory}/checkstyle.xml</checkstyle.config.location>
+        <!--suppress UnresolvedMavenProperty -->
+        <checkstyle.config.location>${project.parent.basedir}/checkstyle.xml</checkstyle.config.location>
         <checkstyle.skip>false</checkstyle.skip>
     </properties>
 
