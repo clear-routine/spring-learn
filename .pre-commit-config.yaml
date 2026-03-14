@@ -1,8 +1,0 @@
-repos:
-  - repo: local
-    hooks:
-      - id: mvn-verify
-        name: Maven verify
-        entry: mvn verify -q
-        language: system
-        pass_filenames: false

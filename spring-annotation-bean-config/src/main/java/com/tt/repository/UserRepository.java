@@ -10,6 +10,7 @@ package com.tt.repository;
  * - Bean 的注册由 AppConfig 中的 @Bean 方法完成
  */
 public class UserRepository {
+
     public String getUser() {
 
         return "TT";

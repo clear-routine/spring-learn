@@ -33,6 +33,12 @@
         <property name="message" value="不能出现两个连续空行"/>
     </module>
 
+    <!-- 类/接口体第一行必须是空行 -->
+    <module name="RegexpMultiline">
+        <property name="format" value="(?:class|interface)\s+\w+[^{]*\{[ \t]*\r?\n(?!\s*\r?\n)[ \t]*[^\s\r\n]"/>
+        <property name="message" value="类/接口体第一行必须是空行"/>
+    </module>
+
     <!-- 方法/构造器体第一行必须是空行：仅匹配含 public/private/protected 的声明，避免误伤 if/for/while 等 -->
     <module name="RegexpMultiline">
         <property name="format" value="(?:public|private|protected)\s+[^\n]*\)[ \t]*\{[ \t]*\r?\n(?!\s*\r?\n)[ \t]*[^\s\r\n]"/>

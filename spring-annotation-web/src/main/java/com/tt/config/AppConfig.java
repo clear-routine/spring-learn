@@ -13,5 +13,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("com.tt")
 public class AppConfig {
+
     // 使用 @ComponentScan 自动扫描并注册所有带注解的组件
 }

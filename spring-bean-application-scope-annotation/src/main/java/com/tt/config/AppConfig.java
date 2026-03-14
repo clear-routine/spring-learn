@@ -10,4 +10,5 @@ import org.springframework.context.annotation.FilterType;
         excludeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = "com\\.tt\\.product\\..*")
 )
 public class AppConfig {
+
 }
