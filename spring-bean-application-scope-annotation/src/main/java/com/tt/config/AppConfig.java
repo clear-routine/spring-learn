@@ -9,6 +9,6 @@ import org.springframework.context.annotation.FilterType;
         basePackages = "com.tt",
         excludeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = "com\\.tt\\.product\\..*")
 )
-public class AppConfig{
+public class AppConfig {
 
 }
