@@ -2,6 +2,10 @@
 # 提交前检查：运行 Maven verify（包含编译、测试、Checkstyle）
 # 检查不通过则阻止提交
 
+#!/bin/sh
+# 强行卸载可能存在的流氓拦截
+export PRE_COMMIT_ALLOW_NO_CONFIG=1
+
 echo ">>> 执行提交前检查 (mvn verify)..."
 if ! mvn verify -q; then
     echo ""

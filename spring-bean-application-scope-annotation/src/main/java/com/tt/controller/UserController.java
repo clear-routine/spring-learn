@@ -31,7 +31,6 @@ public class UserController {
     }
 
     public void incrementVisit() {
-
         visitCount++;
     }
 }
