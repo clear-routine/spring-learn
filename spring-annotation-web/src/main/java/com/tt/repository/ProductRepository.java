@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 public class ProductRepository {
 
     public String getProduct() {
+
         return "iPhone 15 Pro";
     }
 }

@@ -40,7 +40,8 @@ public class PrototypeBeanCleanupProcessor implements BeanPostProcessor, Disposa
      */
     @Override
     public void destroy() throws Exception {
-        System.out.println("\n[PrototypeBeanCleanupProcessor] 容器关闭，destroy() 被调用，清理 " + prototypeBeans.size() + " 个原型 Bean");
+        System.out.println("\n[PrototypeBeanCleanupProcessor] 容器关闭，destroy() 被调用，" +
+                "清理 " + prototypeBeans.size() + " 个原型 Bean");
         for (DisposablePrototype prototype : prototypeBeans) {
             prototype.customDestroy();
         }

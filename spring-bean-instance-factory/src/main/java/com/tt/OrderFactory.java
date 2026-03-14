@@ -10,11 +10,13 @@ public class OrderFactory {
 
     /** 无参实例工厂方法 */
     public Order createInstance() {
+
         return new Order("default");
     }
 
     /** 带参实例工厂方法 */
     public Order createInstance(String orderId) {
+
         return new Order(orderId);
     }
 }

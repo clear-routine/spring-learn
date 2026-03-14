@@ -11,6 +11,7 @@ public class DriverRegister {
     private static boolean driverRegistered = false;
 
     public DriverRegister() {
+
         System.out.println("[DriverRegister] 构造函数被调用 - 开始注册数据库驱动");
         registerDriver();
         System.out.println("[DriverRegister] 数据库驱动注册完成");
@@ -21,6 +22,7 @@ public class DriverRegister {
      * 这是一个初始化操作，需要在 DataSourceUser 使用之前完成
      */
     private void registerDriver() {
+
         if (!driverRegistered) {
             // 模拟注册数据库驱动的操作
             try {
@@ -39,6 +41,7 @@ public class DriverRegister {
      * 检查驱动是否已注册
      */
     public static boolean isDriverRegistered() {
+
         return driverRegistered;
     }
 }

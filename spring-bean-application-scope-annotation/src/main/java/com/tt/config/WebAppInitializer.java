@@ -24,7 +24,8 @@ public class WebAppInitializer implements WebApplicationInitializer {
         registerServlet(servletContext, "ProductServlet", ProductServlet.class, "/product");
     }
 
-    private void registerServlet(ServletContext ctx, String name, Class<? extends jakarta.servlet.Servlet> servletClass, String path) {
+    private void registerServlet(ServletContext ctx, String name,
+            Class<? extends jakarta.servlet.Servlet> servletClass, String path) {
 
         ServletRegistration.Dynamic reg = ctx.addServlet(name, servletClass);
         reg.addMapping(path);

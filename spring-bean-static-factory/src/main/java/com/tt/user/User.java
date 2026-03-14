@@ -8,10 +8,12 @@ public class User {
     private final String version;
 
     public User(String version) {
+
         this.version = version;
     }
 
     public void handle() {
+
         System.out.println("User 处理请求 [version=" + version + "]");
     }
 }

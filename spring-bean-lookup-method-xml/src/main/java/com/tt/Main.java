@@ -14,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
+
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
         System.out.println("========== 方法注入（lookup-method）：每次拿到新 prototype ==========");
@@ -25,7 +26,9 @@ public class Main {
 
         System.out.println();
         System.out.println("========== 属性注入（错误示范）：始终是同一个 prototype ==========");
-        SingletonWithPropertyInjection wrong = context.getBean("singletonWithProperty", SingletonWithPropertyInjection.class);
+
+        SingletonWithPropertyInjection wrong = context.getBean("singletonWithProperty",
+                SingletonWithPropertyInjection.class);
         System.out.println("连续调用 3 次 doSomething()：");
         wrong.doSomething();
         wrong.doSomething();

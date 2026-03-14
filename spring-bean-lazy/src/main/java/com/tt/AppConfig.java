@@ -13,6 +13,7 @@ public class AppConfig {
     /** 默认预实例化：容器启动时立即创建 */
     @Bean
     public HeavyBean eagerBean() {
+
         return new HeavyBean("eagerBean(Java)");
     }
 
@@ -20,6 +21,7 @@ public class AppConfig {
     @Bean
     @Lazy
     public HeavyBean lazyBean() {
+
         return new HeavyBean("lazyBean(Java)");
     }
 }

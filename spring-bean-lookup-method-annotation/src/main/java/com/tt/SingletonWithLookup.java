@@ -16,10 +16,12 @@ public class SingletonWithLookup {
      */
     @Lookup
     public PrototypeBean getPrototypeBean() {
+
         return null;  // 运行时会被 CGLIB 生成的实现替换，不会执行到这里
     }
 
     public void doSomething() {
+
         PrototypeBean bean = getPrototypeBean();
         bean.doWork();
     }

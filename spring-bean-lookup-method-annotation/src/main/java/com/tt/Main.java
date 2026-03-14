@@ -13,7 +13,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(PrototypeBean.class, SingletonWithLookup.class);
+
+        ApplicationContext context = new AnnotationConfigApplicationContext(
+                PrototypeBean.class, SingletonWithLookup.class);
 
         System.out.println("========== 注解 @Lookup：每次拿到新 prototype ==========");
         SingletonWithLookup singleton = context.getBean(SingletonWithLookup.class);

@@ -11,6 +11,7 @@ package com.tt;
 public class DataSourceUser {
 
     public DataSourceUser() {
+
         System.out.println("[DataSourceUser] 构造函数被调用");
 
         // 检查驱动是否已注册
@@ -29,6 +30,7 @@ public class DataSourceUser {
      * 这个方法依赖于 DriverRegister 的初始化操作
      */
     private void initializeDataSource() {
+
         System.out.println("[DataSourceUser] 正在初始化数据源...");
         // 这里会使用已注册的数据库驱动
         System.out.println("[DataSourceUser] ✓ 数据源初始化完成");
@@ -38,6 +40,7 @@ public class DataSourceUser {
      * 使用数据源
      */
     public void useDataSource() {
+
         System.out.println("[DataSourceUser] 使用数据源执行操作");
     }
 }

@@ -15,6 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
+
         demo("no-autowire.xml", "no（默认）");
         demo("by-name.xml", "byName");
         demo("by-type.xml", "byType");

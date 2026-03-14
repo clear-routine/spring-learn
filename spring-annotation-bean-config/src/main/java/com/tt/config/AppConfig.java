@@ -19,6 +19,7 @@ public class AppConfig {
      */
     @Bean
     public UserRepository userRepository() {
+
         return new UserRepository();
     }
 
@@ -32,6 +33,7 @@ public class AppConfig {
      */
     @Bean
     public UserService userService() {
+
         UserService userService = new UserService();
         // 手动调用 userRepository() 方法获取 Bean 并注入
         userService.setUserRepository(userRepository());
@@ -48,6 +50,7 @@ public class AppConfig {
      */
     @Bean
     public UserController userController() {
+
         UserController userController = new UserController();
         // 手动调用 userService() 方法获取 Bean 并注入
         userController.setUserService(userService());

@@ -32,6 +32,7 @@ public class AppConfig {
      */
     @Bean("user")
     public User2 user() {
+
         logger.info("AppConfig: 使用 @Bean 显式定义 user Bean（显式配置）");
         logger.debug("AppConfig: 创建 User2 实例，会覆盖 @Component 定义的 User1");
         System.out.println("AppConfig: 使用 @Bean 显式定义 user Bean");

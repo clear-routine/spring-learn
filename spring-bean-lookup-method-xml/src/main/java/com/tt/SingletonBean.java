@@ -18,6 +18,7 @@ public abstract class SingletonBean {
      * 业务方法：每次调用都会通过 getPrototypeBean() 拿到新实例
      */
     public void doSomething() {
+
         PrototypeBean bean = getPrototypeBean();
         bean.doWork();
     }

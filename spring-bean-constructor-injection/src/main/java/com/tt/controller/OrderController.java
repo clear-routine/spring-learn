@@ -10,10 +10,12 @@ public class OrderController {
     private final OrderService orderService;
 
     public OrderController(OrderService orderService) {
+
         this.orderService = orderService;
     }
 
     public void handle() {
+
         System.out.println("OrderController: 处理订单请求");
         orderService.createOrder("ORDER-001");
     }

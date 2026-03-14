@@ -1,0 +1,12 @@
+#!/bin/sh
+# 提交前检查：运行 Maven verify（包含编译、测试、Checkstyle）
+# 检查不通过则阻止提交
+
+echo ">>> 执行提交前检查 (mvn verify)..."
+if ! mvn verify -q; then
+    echo ""
+    echo ">>> 检查未通过，提交已取消。请修复上述问题后重试。"
+    exit 1
+fi
+echo ">>> 检查通过"
+exit 0

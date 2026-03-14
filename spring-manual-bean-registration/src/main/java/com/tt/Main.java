@@ -38,6 +38,7 @@ public class Main {
      * - 简单的单例对象注册
      */
     private static void demonstrateRegisterSingleton() {
+
         // 创建 AnnotationConfigApplicationContext
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 
@@ -77,6 +78,7 @@ public class Main {
      * - 更灵活的 Bean 注册方式
      */
     private static void demonstrateRegisterBeanDefinition() {
+
         // 创建 AnnotationConfigApplicationContext
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 

@@ -16,6 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
+
         demoXml();
         demoJavaConfig();
         demoDependencyForcesEager();
@@ -23,6 +24,7 @@ public class Main {
 
     /** XML 配置：lazy-init 效果 */
     private static void demoXml() {
+
         System.out.println("========== XML 配置：lazy-init ==========");
         System.out.println();
 
@@ -40,6 +42,7 @@ public class Main {
 
     /** Java 配置：@Lazy 效果 */
     private static void demoJavaConfig() {
+
         System.out.println("========== Java 配置：@Lazy ==========");
         System.out.println();
         System.out.println("创建 AnnotationConfigApplicationContext（加载 AppConfig）...");
@@ -59,6 +62,7 @@ public class Main {
 
     /** 非延迟 Bean 依赖延迟 Bean 时，延迟 Bean 会被迫在启动时创建 */
     private static void demoDependencyForcesEager() {
+
         System.out.println("========== 依赖关系迫使延迟 Bean 提前创建 ==========");
         System.out.println();
         System.out.println("eagerBean 依赖 lazyBean（lazy-init=true）");

@@ -8,10 +8,12 @@ public class Order {
     private final String orderId;
 
     public Order(String orderId) {
+
         this.orderId = orderId;
     }
 
     public void handle() {
+
         System.out.println("Order 处理订单 [" + orderId + "]");
     }
 }

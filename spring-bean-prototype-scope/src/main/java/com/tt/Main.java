@@ -12,6 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
+
         System.out.println("========== 原型作用域 Bean 生命周期演示 ==========\n");
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");

@@ -13,6 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
+
         System.out.println("========== 同一 bean 定义，多次 getBean 返回同一实例 ==========");
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
         SharedService bean1 = context.getBean("a1", SharedService.class);

@@ -10,15 +10,18 @@ import com.tt.user.User;
 public class UserFactory {
 
     private UserFactory() {
+
     }
 
     /** 无参工厂方法 */
     public static User createInstance() {
+
         return new User("default");
     }
 
     /** 带参工厂方法：Spring 根据 constructor-arg 匹配此重载 */
     public static User createInstance(String version) {
+
         return new User(version);
     }
 }
