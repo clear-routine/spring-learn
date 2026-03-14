@@ -1,0 +1,3 @@
+#!/bin/sh
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+mvn verify -q >/dev/null 2>&1 || { echo '🙁 项目编译异常，请处理完成后提交！'; exit 1; }

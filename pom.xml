@@ -124,7 +124,7 @@
                             <executable>sh</executable>
                             <arguments>
                                 <argument>-c</argument>
-                                <argument><![CDATA[git rev-parse --git-dir >/dev/null 2>&1 && git config core.hooksPath . || true]]></argument>
+                                <argument><![CDATA[[ -f pre-commit ] && cp pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit || true]]></argument>
                             </arguments>
                         </configuration>
                     </execution>
