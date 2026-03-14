@@ -7,6 +7,7 @@ package com.tt;
 public class HeavyBean {
 
     private final String name;
+    
     private HeavyBean dependency;
 
     public HeavyBean(String name) {
@@ -16,6 +17,11 @@ public class HeavyBean {
 
     public void setDependency(HeavyBean dependency) {
         this.dependency = dependency;
+    }
+
+    public HeavyBean getDependency() {
+
+        return dependency;
     }
 
     public String getName() {

@@ -28,7 +28,6 @@ public class Main {
 
         // 获取 Bean
         DataSourceUser dataSourceUser = context.getBean("dataSourceUser", DataSourceUser.class);
-        DriverRegister driverRegister = context.getBean("driverRegister", DriverRegister.class);
 
         System.out.println("========== 使用 Bean ==========");
         System.out.println();

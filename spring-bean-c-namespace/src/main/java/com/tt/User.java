@@ -3,7 +3,6 @@ package com.tt;
 /**
  * c-namespace 演示：构造器注入
  */
-@SuppressWarnings("all")
 public class User {
 
     private final User manager;

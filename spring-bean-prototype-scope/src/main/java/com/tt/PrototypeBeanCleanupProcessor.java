@@ -3,6 +3,7 @@ package com.tt;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.lang.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class PrototypeBeanCleanupProcessor implements BeanPostProcessor, Disposa
      * 作用：将实现 DisposablePrototype 的 bean 登记到 prototypeBeans 集合中，以便容器关闭时统一清理。
      */
     @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+    public Object postProcessAfterInitialization(@NonNull Object bean, @NonNull String beanName) throws BeansException {
         System.out.println("  [postProcessAfterInitialization] 被调用，beanName: " + beanName);
         if (bean instanceof DisposablePrototype) {
             prototypeBeans.add((DisposablePrototype) bean);

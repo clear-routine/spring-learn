@@ -1,6 +1,7 @@
 package com.tt;
 
 import com.tt.controller.OrderController;
+import org.springframework.lang.NonNull;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,8 +21,10 @@ public class Main {
         demo("constructor.xml", "constructor");
     }
 
-    private static void demo(String config, String mode) {
+    private static void demo(@NonNull String config, @NonNull String mode) {
+
         System.out.println("========== autowire=\"" + mode + "\" ==========");
+
         ApplicationContext context = new ClassPathXmlApplicationContext(config);
         OrderController controller = context.getBean("orderController", OrderController.class);
         controller.handle("order-001");

@@ -1,6 +1,7 @@
 package com.tt.servlet;
 
 import com.tt.controller.UserController;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 /**
  * JDK 动态代理：proxy-target-class="false"
@@ -21,8 +23,8 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-        WebApplicationContext context = WebApplicationContextUtils
-                .getWebApplicationContext(getServletContext());
+        ServletContext servletContext = Objects.requireNonNull(getServletContext());
+        WebApplicationContext context = WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext);
 
         UserController controller = context.getBean("userController", UserController.class);
 

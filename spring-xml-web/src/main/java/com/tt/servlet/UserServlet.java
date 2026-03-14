@@ -1,6 +1,7 @@
 package com.tt.servlet;
 
 import com.tt.controller.UserController;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 /**
  * 用户接口 Servlet：处理 HTTP 请求
@@ -24,8 +26,9 @@ public class UserServlet extends HttpServlet {
             throws ServletException, IOException {
 
         // 从 Spring 容器中获取 bean（容器已通过 ContextLoaderListener 自动创建）
+        ServletContext servletContext = Objects.requireNonNull(getServletContext());
         WebApplicationContext context = WebApplicationContextUtils
-                .getWebApplicationContext(getServletContext());
+                .getRequiredWebApplicationContext(servletContext);
 
         // 从 Controller 获取数据（遵循 MVC 分层架构）
         UserController controller = context.getBean(UserController.class);

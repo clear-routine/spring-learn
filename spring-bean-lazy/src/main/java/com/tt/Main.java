@@ -65,9 +65,10 @@ public class Main {
         System.out.println("加载 dependency-demo.xml...");
         System.out.println();
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("dependency-demo.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dependency-demo.xml");
 
         System.out.println();
         System.out.println(">>> 即使 lazyService 标记了 lazy-init，因被 eagerBean 依赖，启动时仍被创建");
+        context.close();
     }
 }

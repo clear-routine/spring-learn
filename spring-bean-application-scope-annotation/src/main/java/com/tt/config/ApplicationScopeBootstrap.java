@@ -5,6 +5,7 @@ import jakarta.servlet.ServletContext;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.ServletContextAware;
 
@@ -24,13 +25,13 @@ public class ApplicationScopeBootstrap implements ApplicationContextAware, Servl
     private ServletContext servletContext;
 
     @Override
-    public void setApplicationContext(ApplicationContext applicationContext) {
+    public void setApplicationContext(@NonNull ApplicationContext applicationContext) {
 
         this.applicationContext = applicationContext;
     }
 
     @Override
-    public void setServletContext(ServletContext servletContext) {
+    public void setServletContext(@NonNull ServletContext servletContext) {
 
         this.servletContext = servletContext;
     }

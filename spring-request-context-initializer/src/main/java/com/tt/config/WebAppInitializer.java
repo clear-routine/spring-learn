@@ -3,6 +3,7 @@ package com.tt.config;
 import com.tt.servlet.UserServlet;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletRegistration;
+import org.springframework.lang.NonNull;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.request.RequestContextListener;
@@ -17,7 +18,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 public class WebAppInitializer implements WebApplicationInitializer {
 
     @Override
-    public void onStartup(ServletContext servletContext) {
+    public void onStartup(@NonNull ServletContext servletContext) {
 
         // 创建根应用上下文（注解配置）
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();

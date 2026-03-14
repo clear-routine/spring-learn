@@ -4,6 +4,7 @@ import com.tt.repository.UserRepository;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.lang.NonNull;
 
 public class UserService implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -15,7 +16,7 @@ public class UserService implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent event) {
+    public void onApplicationEvent(@NonNull ContextRefreshedEvent event) {
 
         System.out.println(">>> [UserService] ContextRefreshedEvent 触发，开始执行初始化任务");
 

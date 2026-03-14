@@ -5,6 +5,7 @@ import jakarta.servlet.DispatcherType;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
+import org.springframework.lang.NonNull;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.filter.RequestContextFilter;
@@ -21,7 +22,7 @@ import java.util.EnumSet;
 public class WebAppInitializer implements WebApplicationInitializer {
 
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
+    public void onStartup(@NonNull ServletContext servletContext) throws ServletException {
 
         // 创建根应用上下文（注解配置）
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();

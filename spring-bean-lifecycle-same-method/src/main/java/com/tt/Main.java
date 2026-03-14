@@ -1,7 +1,5 @@
 package com.tt;
 
-import com.tt.controller.UserController;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

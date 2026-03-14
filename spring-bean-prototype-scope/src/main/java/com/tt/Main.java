@@ -1,6 +1,5 @@
 package com.tt;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -15,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("========== 原型作用域 Bean 生命周期演示 ==========\n");
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
         System.out.println(">>> 第一次 getBean，创建第一个原型实例：");
         System.out.println();
@@ -31,7 +30,7 @@ public class Main {
         System.out.println();
 
         System.out.print(">>> 关闭容器，触发自定义后置钩子（PrototypeBeanCleanupProcessor.destroy）：");
-        ((ClassPathXmlApplicationContext) context).close();
+        context.close();
         System.out.println("\n>>> 演示完成");
     }
 }

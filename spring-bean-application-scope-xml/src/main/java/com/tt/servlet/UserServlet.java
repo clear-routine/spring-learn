@@ -2,8 +2,11 @@ package com.tt.servlet;
 
 import com.tt.config.ApplicationScopeBootstrap;
 import com.tt.controller.UserController;
+import jakarta.servlet.ServletContext;
 
 import jakarta.servlet.ServletException;
+
+import java.util.Objects;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,7 +23,8 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        UserController controller = (UserController) getServletContext().getAttribute(ApplicationScopeBootstrap.ATTR_KEY);
+        ServletContext servletContext = Objects.requireNonNull(getServletContext());
+        UserController controller = (UserController) servletContext.getAttribute(ApplicationScopeBootstrap.ATTR_KEY);
         if (controller == null) {
             response.setContentType("text/plain;charset=UTF-8");
             response.getWriter().println("userController 未找到，若为 singleton 则不会放入 ServletContext");

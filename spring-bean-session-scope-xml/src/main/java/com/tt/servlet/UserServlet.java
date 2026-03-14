@@ -1,6 +1,7 @@
 package com.tt.servlet;
 
 import com.tt.controller.UserController;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 /**
  * 用户接口：/user，演示 session 作用域（UserController scope="session"）
@@ -21,8 +23,9 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        ServletContext servletContext = Objects.requireNonNull(getServletContext());
         WebApplicationContext context = WebApplicationContextUtils
-                .getWebApplicationContext(getServletContext());
+                .getRequiredWebApplicationContext(servletContext);
         UserController controller = context.getBean(UserController.class);
         controller.incrementVisit();
 
