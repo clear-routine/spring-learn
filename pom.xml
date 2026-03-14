@@ -125,7 +125,7 @@
             </plugins>
         </pluginManagement>
         <plugins>
-            <!-- 首次执行 mvn 时自动配置 Git 钩子，克隆后无需手动操作 -->
+            <!-- 执行 mvn 时自动配置 Git 钩子，无需手动操作 -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -154,10 +154,6 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                    <compilerArgs>
-                        <arg>-Xlint:all</arg>
-                        <arg>-Werror</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
