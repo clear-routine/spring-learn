@@ -1,6 +1,7 @@
 package com.tt.service;
 
 import com.tt.repository.UserRepository;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    private UserRepository userRepository;
-
+    @Setter
     @Autowired
-    public void setUserRepository(UserRepository userRepository) {
-
-        this.userRepository = userRepository;
-    }
+    private UserRepository userRepository;
 
     public String getUser() {
 

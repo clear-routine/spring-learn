@@ -1,6 +1,8 @@
 package com.tt.controller;
 
 import com.tt.service.UserService;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.annotation.SessionScope;
@@ -10,6 +12,7 @@ import java.util.UUID;
 /**
  * 用户控制器，@SessionScope：每个 HTTP Session 创建一个新实例，同会话内多次请求复用同一实例
  */
+@Getter
 @Controller
 @SessionScope
 public class UserController {
@@ -18,13 +21,9 @@ public class UserController {
 
     private int visitCount;
 
-    private UserService userService;
-
+    @Setter
     @Autowired
-    public void setUserService(UserService userService) {
-
-        this.userService = userService;
-    }
+    private UserService userService;
 
     public String getUser() {
 
@@ -35,15 +34,5 @@ public class UserController {
     public void incrementVisit() {
 
         visitCount++;
-    }
-
-    public int getVisitCount() {
-
-        return visitCount;
-    }
-
-    public String getInstanceId() {
-
-        return instanceId;
     }
 }

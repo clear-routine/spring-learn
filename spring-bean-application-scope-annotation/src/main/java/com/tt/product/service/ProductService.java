@@ -1,6 +1,7 @@
 package com.tt.product.service;
 
 import com.tt.product.repository.ProductRepository;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductService {
 
-    private ProductRepository productRepository;
-
+    @Setter
     @Autowired
-    public void setProductRepository(ProductRepository productRepository) {
-
-        this.productRepository = productRepository;
-    }
+    private ProductRepository productRepository;
 
     public String getProduct() {
 

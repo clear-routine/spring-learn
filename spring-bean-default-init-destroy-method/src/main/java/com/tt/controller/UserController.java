@@ -1,6 +1,7 @@
 package com.tt.controller;
 
 import com.tt.service.UserService;
+import lombok.Setter;
 
 /**
  * UserController 不带 init/destroy 方法。
@@ -10,12 +11,8 @@ import com.tt.service.UserService;
  */
 public class UserController {
 
+    @Setter
     private UserService userService;
-
-    public void setUserService(UserService userService) {
-
-        this.userService = userService;
-    }
 
     public String getUser() {
 

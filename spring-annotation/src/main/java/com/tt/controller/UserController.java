@@ -1,6 +1,7 @@
 package com.tt.controller;
 
 import com.tt.service.UserService;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -19,14 +20,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class UserController {
 
+    @Setter
+    @Autowired
     private UserService userService;
 
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
     public void handle() {
+
         userService.process();
     }
 }

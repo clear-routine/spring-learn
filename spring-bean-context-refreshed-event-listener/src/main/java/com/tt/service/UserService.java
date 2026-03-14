@@ -1,6 +1,7 @@
 package com.tt.service;
 
 import com.tt.repository.UserRepository;
+import lombok.Setter;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -8,12 +9,8 @@ import org.springframework.lang.NonNull;
 
 public class UserService implements ApplicationListener<ContextRefreshedEvent> {
 
+    @Setter
     private UserRepository userRepository;
-
-    public void setUserRepository(UserRepository userRepository) {
-
-        this.userRepository = userRepository;
-    }
 
     @Override
     public void onApplicationEvent(@NonNull ContextRefreshedEvent event) {

@@ -1,6 +1,7 @@
 package com.tt.controller;
 
 import com.tt.service.UserService;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -13,18 +14,16 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class UserController {
 
-    private UserService userService;
-
+    @Setter
     @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService;
 
     /**
      * 获取用户信息
      * @return 用户信息
      */
     public String getUser() {
+
         return userService.getUser();
     }
 }

@@ -1,24 +1,23 @@
 package com.tt.controller;
 
 import com.tt.service.UserService;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.UUID;
 
 /**
  * 用户控制器，scope="session"：每个 HTTP Session 创建一个新实例，同会话内多次请求复用同一实例
  */
+@Getter
 public class UserController {
 
     private final String instanceId = UUID.randomUUID().toString();
 
     private int visitCount;
 
+    @Setter
     private UserService userService;
-
-    public void setUserService(UserService userService) {
-
-        this.userService = userService;
-    }
 
     public String getUser() {
 
@@ -29,15 +28,5 @@ public class UserController {
     public void incrementVisit() {
 
         visitCount++;
-    }
-
-    public int getVisitCount() {
-
-        return visitCount;
-    }
-
-    public String getInstanceId() {
-
-        return instanceId;
     }
 }

@@ -1,6 +1,7 @@
 package com.tt.service;
 
 import com.tt.repository.UserRepository;
+import lombok.Setter;
 
 /**
  * UserService 通过 init-method 和 destroy-method 配置生命周期回调。
@@ -11,12 +12,8 @@ import com.tt.repository.UserRepository;
  */
 public class UserService {
 
+    @Setter
     private UserRepository userRepository;
-
-    public void setUserRepository(UserRepository userRepository) {
-
-        this.userRepository = userRepository;
-    }
 
     public String getUser() {
 

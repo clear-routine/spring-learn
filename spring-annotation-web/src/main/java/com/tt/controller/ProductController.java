@@ -1,6 +1,7 @@
 package com.tt.controller;
 
 import com.tt.service.ProductService;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -13,18 +14,16 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ProductController {
 
-    private ProductService productService;
-
+    @Setter
     @Autowired
-    public void setProductService(ProductService productService) {
-        this.productService = productService;
-    }
+    private ProductService productService;
 
     /**
      * 获取产品信息
      * @return 产品信息
      */
     public String getProduct() {
+
         return productService.getProduct();
     }
 }

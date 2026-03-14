@@ -1,5 +1,7 @@
 package com.tt;
 
+import lombok.Setter;
+
 /**
  * 错误示范：单例通过属性注入 prototype
  *
@@ -8,13 +10,11 @@ package com.tt;
  */
 public class SingletonWithPropertyInjection {
 
+    @Setter
     private PrototypeBean prototypeBean;
 
-    public void setPrototypeBean(PrototypeBean prototypeBean) {
-        this.prototypeBean = prototypeBean;
-    }
-
     public void doSomething() {
+
         prototypeBean.doWork();  // 每次都是同一个实例
     }
 }

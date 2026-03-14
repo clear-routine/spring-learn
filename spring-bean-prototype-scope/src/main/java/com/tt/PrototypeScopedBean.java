@@ -2,6 +2,8 @@ package com.tt;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.Getter;
+
 import java.util.UUID;
 
 /**
@@ -11,6 +13,7 @@ import java.util.UUID;
  */
 public class PrototypeScopedBean implements DisposablePrototype {
 
+    @Getter
     private final String instanceId = UUID.randomUUID().toString().substring(0, 8);
     private boolean resourceAcquired = false;
 
@@ -19,6 +22,7 @@ public class PrototypeScopedBean implements DisposablePrototype {
      */
     @PostConstruct
     public void init() {
+
         // 模拟获取资源（如数据库连接、文件句柄等）
         resourceAcquired = true;
         System.out.println("  [前置钩子 @PostConstruct] 实例 " + instanceId + " 初始化完成，资源已获取");
@@ -30,6 +34,7 @@ public class PrototypeScopedBean implements DisposablePrototype {
      */
     @PreDestroy
     public void destroy() {
+
         System.out.println("  [@PreDestroy] 实例 " + instanceId + " 的 destroy 被调用（原型 Bean 下 Spring 不会自动调用）");
         if (resourceAcquired) {
             // 模拟释放资源
@@ -44,15 +49,12 @@ public class PrototypeScopedBean implements DisposablePrototype {
      */
     @Override
     public void customDestroy() {
+
         System.out.println("  [自定义后置钩子] 实例 " + instanceId + " 执行自定义清理");
         if (resourceAcquired) {
             // 模拟释放资源
             resourceAcquired = false;
             System.out.println("  >>> 实例 " + instanceId + " 已释放资源");
         }
-    }
-
-    public String getInstanceId() {
-        return instanceId;
     }
 }

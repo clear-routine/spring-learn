@@ -1,6 +1,7 @@
 package com.tt.controller;
 
 import com.tt.service.UserService;
+import lombok.Setter;
 
 /**
  * UserController - 用户控制层
@@ -10,13 +11,11 @@ import com.tt.service.UserService;
  */
 public class UserController {
 
+    @Setter
     private UserService userService;
 
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
     public void handle() {
+
         userService.process();
     }
 }

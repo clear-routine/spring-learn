@@ -1,5 +1,7 @@
 package com.tt;
 
+import lombok.Getter;
+
 import java.util.UUID;
 
 /**
@@ -7,13 +9,11 @@ import java.util.UUID;
  */
 public class PrototypeBean {
 
+    @Getter
     private final String instanceId = UUID.randomUUID().toString().substring(0, 8);
 
-    public String getInstanceId() {
-        return instanceId;
-    }
-
     public void doWork() {
+
         System.out.println("  PrototypeBean 执行工作，实例 ID: " + instanceId);
     }
 }

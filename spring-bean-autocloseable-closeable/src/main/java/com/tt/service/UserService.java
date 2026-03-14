@@ -1,6 +1,7 @@
 package com.tt.service;
 
 import com.tt.repository.UserRepository;
+import lombok.Setter;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -13,12 +14,8 @@ import java.io.IOException;
  */
 public class UserService implements Closeable {
 
+    @Setter
     private UserRepository userRepository;
-
-    public void setUserRepository(UserRepository userRepository) {
-
-        this.userRepository = userRepository;
-    }
 
     public String getUser() {
 

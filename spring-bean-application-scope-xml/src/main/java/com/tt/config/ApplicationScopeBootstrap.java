@@ -2,6 +2,7 @@ package com.tt.config;
 
 import com.tt.controller.UserController;
 import jakarta.servlet.ServletContext;
+import lombok.Setter;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -18,21 +19,11 @@ public class ApplicationScopeBootstrap implements ApplicationContextAware, Servl
 
     public static final String ATTR_KEY = "userController";
 
+    @Setter(onParam_ = @NonNull)
     private ApplicationContext applicationContext;
 
+    @Setter(onParam_ = @NonNull)
     private ServletContext servletContext;
-
-    @Override
-    public void setApplicationContext(@NonNull ApplicationContext applicationContext) {
-
-        this.applicationContext = applicationContext;
-    }
-
-    @Override
-    public void setServletContext(@NonNull ServletContext servletContext) {
-
-        this.servletContext = servletContext;
-    }
 
     @Override
     public void afterPropertiesSet() {

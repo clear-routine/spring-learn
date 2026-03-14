@@ -1,6 +1,7 @@
 package com.tt.service;
 
 import com.tt.repository.UserRepository;
+import lombok.Setter;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -15,12 +16,8 @@ import jakarta.servlet.http.HttpServletRequest;
  */
 public class UserService {
 
+    @Setter
     private UserRepository userRepository;
-
-    public void setUserRepository(UserRepository userRepository) {
-
-        this.userRepository = userRepository;
-    }
 
     public String getUser() {
 

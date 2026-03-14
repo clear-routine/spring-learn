@@ -1,6 +1,7 @@
 package com.tt.service;
 
 import com.tt.repository.UserRepository;
+import lombok.Setter;
 
 /**
  * UserService 带有 init() 和 destroy() 方法。
@@ -10,12 +11,8 @@ import com.tt.repository.UserRepository;
  */
 public class UserService {
 
+    @Setter
     private UserRepository userRepository;
-
-    public void setUserRepository(UserRepository userRepository) {
-
-        this.userRepository = userRepository;
-    }
 
     public String getUser() {
 
