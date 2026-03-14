@@ -20,7 +20,6 @@ public class Main {
 
         UserController controller =
                 context.getBean(UserController.class);
-
         controller.handle();
     }
 }

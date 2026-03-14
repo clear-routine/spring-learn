@@ -76,7 +76,23 @@
         <maven.compiler.target>17</maven.compiler.target>
         <spring.version>6.2.17</spring.version>
         <checkstyle.config.location>${session.executionRootDirectory}/checkstyle.xml</checkstyle.config.location>
+        <checkstyle.skip>false</checkstyle.skip>
     </properties>
+
+    <profiles>
+        <!-- root 模块无 src/main/java，不执行 checkstyle -->
+        <profile>
+            <id>skip-checkstyle-for-aggregator</id>
+            <activation>
+                <file>
+                    <missing>src/main/java</missing>
+                </file>
+            </activation>
+            <properties>
+                <checkstyle.skip>true</checkstyle.skip>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <pluginManagement>
@@ -93,6 +109,7 @@
                                     <pluginExecutionFilter>
                                         <groupId>org.codehaus.mojo</groupId>
                                         <artifactId>exec-maven-plugin</artifactId>
+                                        <versionRange>[3.5.0,)</versionRange>
                                         <goals>
                                             <goal>exec</goal>
                                         </goals>
@@ -137,6 +154,10 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
+                    <compilerArgs>
+                        <arg>-Xlint:all</arg>
+                        <arg>-Werror</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -146,7 +167,7 @@
                 <configuration>
                     <configLocation>${checkstyle.config.location}</configLocation>
                     <consoleOutput>true</consoleOutput>
-                    <skip>${project.packaging} == 'pom'</skip>
+                    <skip>${checkstyle.skip}</skip>
                 </configuration>
                 <executions>
                     <execution>

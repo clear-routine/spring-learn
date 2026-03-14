@@ -80,6 +80,9 @@
         <!-- if 必须有 {} -->
         <module name="NeedBraces"/>
 
+        <!-- 禁止未使用的导入 -->
+        <module name="UnusedImports"/>
+
     </module>
 
 </module>
